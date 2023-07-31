@@ -1,9 +1,12 @@
 from binance.spot import Spot
+import os
+from dotenv import load_dotenv
+load_dotenv()
 
 client = Spot()
 
 # Access testnet
-client = Spot(base_url='https://testnet.binance.vision')
+#client = Spot(base_url='https://testnet.binance.vision')
 #print(client.base_url)
 
 # Get server timestamp
@@ -18,13 +21,17 @@ print(client.time())
 # API key/secret are required for user data endpoints
 
 # client testnet
-client = Spot(api_key='FhVC53YuOBMmfuEUBwqVZ2WR8aurM2BYfX4gru5fWfROXJDA2Qj4fXQKfshaBXkd', api_secret='w52djXRnEh7NM68goEnR3oeyUocr3kiXV4BGSCqabdI6EX4ml1g6ql4Oij8CoQ1Q')
+# client = Spot(api_key=os.getenv('API_KEY_TESTNET'), api_secret=os.getenv('API_SECRET_TESTNET'))
+
+# Account tesnet
+# client = Spot(api_key=os.getenv('API_KEY_TESTNET_ACCOUNT'), api_secret=os.getenv('API_SECRET_TESTNET_ACCOUNT'))
 
 # Vrai client Binance avec restriction IP: curl ifconfig.me
-# client = Spot(api_key='Bu1wtsxgYsHXnUYma9alLgeaZjDPYSUmwkGc6CvlUfau0BWfPosqhsNCfnXFTyPA', api_secret='nApQjyvUzyhBQRsZgD6AWy8ezoh36ousvfak14pWCiA9M95gcGNcovFlpQuTHOyq')
+client = Spot(api_key=os.getenv('API_KEY'), api_secret=os.getenv('API_SECRET'))
 
 # Get account and balance information
-print(client.get_asset_balance())
+
+print(client.account())
 
 # Post a new order
 # params = {
