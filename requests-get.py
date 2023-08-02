@@ -1,3 +1,5 @@
+# Terminal command : python3 requests-get.py > results/requests-get.json
+
 import requests
 import json
 from datetime import datetime
@@ -5,7 +7,18 @@ from datetime import datetime
 base_url = "https://data-api.binance.vision/api/v3"
 endpoint = "/avgPrice"
 
-symbol = "BTCEUR"
+# endpoint = '/aggTrades'
+# endpoint = '/depth'
+# endpoint = '/exchangeInfo'
+# endpoint = '/klines'
+# endpoint = '/ping'
+# endpoint = '/ticker'
+# endpoint = '/ticker/24hr'
+# endpoint = '/ticker/bookTicker'
+# endpoint = '/ticker/price'
+# endpoint = '/time'
+# endpoint = '/trades'
+# endpoint = '/uiKlines'
 
 def get_price(symbol):
     url = f"{base_url}{endpoint}?symbol={symbol}"
