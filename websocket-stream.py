@@ -14,8 +14,16 @@ def message_handler(_, message):
 my_client = SpotWebsocketStreamClient(on_message=message_handler)
 
 # Subscribe to a single symbol stream
-#my_client.agg_trade(symbol="btcusdt")
+
+# To get aggregate trades
+# my_client.agg_trade(symbol="btcusdt")
+
+# To get average price live stream
 my_client.kline(symbol="btcusdt",interval='1s')
+
+# To define how long to stream: 15 --> 15 seconds
 time.sleep(15)
+
+# Closing connection management
 logging.info("closing ws connection")
 my_client.stop()
