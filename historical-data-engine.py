@@ -60,19 +60,11 @@ def get_pairs(money, market_list):
     df = df.reset_index()
     return df.pairs
 
-
 # data request, data cleaning, data integration in MongoDB
 def engine(url, symbol, interval, start_period, end_period):
-    # API limitation - 500 records per call
-    # Evaluation of the necessary chunks
 
-
-    # if interval == '1m':
-    #     day_period = chunk_minutes(time_difference)
-    # else:
-    #     day_period = chunk_hours(time_difference)
-
-    day_period = get_chunk(start_period, end_period,interval)
+    # Size of each period of time request to respect API restriction
+    day_period = get_chunk(start_period, end_period, interval)
 
     data = get_data(url, symbol, interval, start_period, end_period, day_period)
 
@@ -88,28 +80,19 @@ def engine(url, symbol, interval, start_period, end_period):
         # integration mongodb
         # Write function
 
-# Refacto to create chunk adding interval to have only 1 function instead of 2
-# def chunk_minutes(time_difference):
-#     minutes_difference = time_difference.total_seconds() / 60
-#     nbr_chunk = minutes_difference/500
-#     # size period calculation (nbr of days to get 500 records)
-#     return pd.Timedelta(days=time_difference.days / nbr_chunk)
-
-# def chunk_hours(time_difference):
-#     hours_difference = time_difference.total_seconds() / 3600
-#     nbr_chunk = hours_difference/500
-#     # size period calculation (nbr of days to get 500 records)
-#     return pd.Timedelta(days=time_difference.days / nbr_chunk)
-
+# API limitation - 500 records per call
+# Number of calls that will be necessary to extract data
 def get_chunk(start_period, end_period, interval):
     time_difference = end_period - start_period
+    # Evaluation of the max number of records that could be extracted
     if interval == '1m':
-        difference = time_difference.total_seconds() / 60
+        nbr_records = time_difference.total_seconds() / 60
     else:
-        difference = time_difference.total_seconds() / 3600
-    nbr_chunk = difference/500
+        nbr_records = time_difference.total_seconds() / 3600
+    # Number of necessary calls to get all records
+    nbr_calls = nbr_records/500
     # size period calculation (nbr of days to get 500 records)
-    return pd.Timedelta(days=time_difference.days / nbr_chunk)
+    return pd.Timedelta(days=time_difference.days / nbr_calls)
 
 def get_data(url, symbol, interval, start_period, end_period, day_period):
     data = []
@@ -162,7 +145,6 @@ def create_df(data):
     df_data.index = [dt.datetime.fromtimestamp(d/1000.0) for d in df_data.datetime]
     df_data = df_data.sort_index()
     return df_data.astype(float)
-
 
 def clean_df(df_data):
     # Check if data is clean
