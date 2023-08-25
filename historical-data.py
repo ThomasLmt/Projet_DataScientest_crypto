@@ -9,10 +9,10 @@ import matplotlib.pyplot as plt
 url = 'https://api.binance.com/api/v3/klines'
 
 # Param to get chosen data
-start_period = str(int(dt.datetime(2017,1,1).timestamp()*1000)) # start date period
-end_period = str(int(dt.datetime(2023,8,1).timestamp()*1000)) # end date period
-symbol = 'BTCEUR' # crypto market
-interval = '1w' # interval between records 1M = 1 month
+start_period = str(int(dt.datetime(2021,8,23).timestamp()*1000)) # start date period
+end_period = str(int(dt.datetime(2023,8,20).timestamp()*1000)) # end date period
+symbol = 'ETHEUR' # crypto market
+interval = '1h' # interval between records 1M = 1 month
 
 par = {'symbol': symbol, 'interval': interval, 'startTime': start_period, 'endTime': end_period}
 
@@ -26,8 +26,12 @@ data.sort_index()
 data=data.astype(float)
 
 # DataFrame head
-print(data.head())
+# print(data.head())
+print(data)
 
 # Chart
-data["close"].plot(title = 'BTCEUR', legend = 'close')
+data["close"].plot(title = 'ETHEUR', legend = 'close')
 plt.show()
+
+# DataFrame size
+# print(data.count())
