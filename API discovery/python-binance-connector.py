@@ -1,5 +1,5 @@
 # Used to test orders using the Binance Testnet API
-# Terminal command : python3 binance-connector.py > results/binance-connector.json
+# Terminal command : python3 binance-connector.py > ../results/binance-connector.json
 
 from binance import Client, ThreadedWebsocketManager, ThreadedDepthCacheManager
 import os

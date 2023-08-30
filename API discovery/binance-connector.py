@@ -1,5 +1,5 @@
 # Used to get production/live data from the Binance API
-# Terminal command : python3 binance-connector.py > results/binance-connector.json
+# Terminal command : python3 binance-connector.py > ../results/binance-connector.json
 
 from binance.spot import Spot
 import os
@@ -17,7 +17,7 @@ client = Spot()
 #print(client.time())
 
 # Get klines of BTCUSDT at 1m interval
-print(client.klines("BTCUSDT", "1m"))
+print(client.klines("ETHUSDT", "1m"))
 
 # Get last 10 klines of BTCUSDT at 1h interval
 #print(client.klines("BTCUSDT", "1h", limit=10))

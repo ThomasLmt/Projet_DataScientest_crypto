@@ -1,4 +1,4 @@
-#  Terminal command : python3 historical-data.py > results/historical-data.json
+#  Terminal command : python3 historical-data.py > ../results/historical-data.json
 import requests
 import json
 import pandas as pd

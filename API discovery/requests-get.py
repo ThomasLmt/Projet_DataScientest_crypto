@@ -1,4 +1,4 @@
-# Terminal command : python3 requests-get.py > results/requests-get.json
+# Terminal command : python3 requests-get.py > ../results/requests-get.json
 
 import requests
 import json

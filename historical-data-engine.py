@@ -1,6 +1,6 @@
 # Engine to extract all trading pairs crypto market data
 # Terminal command : python3 -u historical-data-engine.py > results/engine.txt
-# -u allow to follow the process live within engine.txt
+# -u allows to follow the process live within engine.txt
 
 import requests
 import json
@@ -8,34 +8,66 @@ import pandas as pd
 import datetime as dt
 import matplotlib.pyplot as plt
 import time
+from pymongo import MongoClient
+import os
+from dotenv import load_dotenv
+
+load_dotenv()
 
 def main():
     t0 = time.time()
     print("START - {}\n".format(dt.datetime.fromtimestamp(t0).strftime("%Y-%m-%d %H:%M:%S"),3))
-    # Binance API url
+
+    # Data source used: Binance API url
     url = 'https://api.binance.com/api/v3/klines'
+    url_trade = 'https://api.binance.com/api/v3/aggTrades'
 
-    # interval between records: 1M = 1 month, 1h = 1 hour, 1m = 1 minute, 1s = 1 second
-    interval = '1h'
-
-    # Period
-    start_period = dt.datetime(2020, 1, 1)
-    #end_period = dt.datetime(2023, 8, 23)
-    end_period = dt.datetime(2020, 1, 31)
-
+    # Market to study
     money = 'ETH'
 
-    # Trading pairs ETH list
+    # Interval between records
+    # 1M = 1 month, 1h = 1 hour, 1m = 1 minute, 1s = 1 second
+    #interval = '1m'
+    interval = '1h'
+
+    # Period extracted
+    start_period = dt.datetime(2020, 1, 1)
+    # end_period = dt.datetime(2023, 8, 26)
+    end_period = dt.datetime(2020, 1, 2)
+
+    # Trading pairs list (ex: all pairs for ETH)
     trading_pairs = get_trading_pairs(money)
 
-    # loop to get data for each trading pair
+    # Connect Mongo
+    client = connect_mongo()
+
+    # Loop to get data for each trading pair
     for pair in trading_pairs:
         print('Market: ',pair)
-        engine(url, pair, interval, start_period, end_period)
+        engine(url, pair, interval, start_period, end_period, client)
+
+    # Close Mongo
+    client.close()
 
     tt = (time.time() - t0) / 60
     print("\nRealized in {} minutes".format(round(tt,3)))
     print("\nEND - {}\n".format(dt.datetime.fromtimestamp(time.time()).strftime("%Y-%m-%d %H:%M:%S")))
+
+def connect_mongo():
+    client = MongoClient(
+        host="127.0.0.1",
+        port = 27017,
+        username = os.getenv('MONGO_USER'),
+        password = os.getenv('MONGO_PWD'),
+    )
+
+    # Database creation
+    binance_historical = client['binance_historical']
+
+    # Collection creation
+    markets = binance_historical.create_collection(name="markets")
+
+    return client
 
 def get_trading_pairs(money):
     market_list = get_market_list()
@@ -61,7 +93,7 @@ def get_pairs(money, market_list):
     return df.pairs
 
 # data request, data cleaning, data integration in MongoDB
-def engine(url, symbol, interval, start_period, end_period):
+def engine(url, symbol, interval, start_period, end_period, client):
 
     # Size of each period of time request to respect API restriction
     day_period = get_chunk(start_period, end_period, interval)
@@ -69,16 +101,27 @@ def engine(url, symbol, interval, start_period, end_period):
     data = get_data(url, symbol, interval, start_period, end_period, day_period)
 
     if data:
-        df_data = create_df(data)
+        df_data = create_df(data, symbol)
         df_clean = clean_df(df_data)
+
         # Display or use data_df as needed
-        print("\n",df_clean.close.describe())
+        # print("\n",df_clean.close.describe())
+        # print('df_clean.close count: ', df_clean.close.count())
+
         # Chart
         # df_clean["close"].plot(title = 'ETHEUR', legend = 'close')
         # plt.show()
 
-        # integration mongodb
-        # Write function
+        # MongoDB market data upload
+        mongo_upload(df_clean, client)
+
+        # Check
+        # Request data to mongo to put in a DataFrame
+        #markets = client['binance_historical']['markets']
+        #df = pd.DataFrame(markets.find({}))
+        #print('mongo.close count: ', df.close.count())
+        # Check format of markets records
+        # print(markets.find_one())
 
 # API limitation - 500 records per call
 # Number of calls that will be necessary to extract data
@@ -138,13 +181,16 @@ def get_data(url, symbol, interval, start_period, end_period, day_period):
 
     return data
 
-def create_df(data):
+def create_df(data, symbol):
     # Create DataFrame
     df_data = pd.DataFrame(data)
     df_data.columns = ['datetime', 'open', 'high', 'low', 'close', 'volume','close_time', 'qav', 'nbr_trades','taker_base_vol', 'taker_quote_vol', 'unused_field']
     df_data.index = [dt.datetime.fromtimestamp(d/1000.0) for d in df_data.datetime]
     df_data = df_data.sort_index()
-    return df_data.astype(float)
+    df_data = df_data.astype(float)
+    df_data['market'] = symbol
+    df_data['date'] = [dt.datetime.fromtimestamp(d/1000.0) for d in df_data.datetime]
+    return df_data
 
 def clean_df(df_data):
     # Check if data is clean
@@ -154,6 +200,14 @@ def clean_df(df_data):
     # Remove 0
     df_data = df_data[df_data.close != 0]
     return df_data
+
+def mongo_upload(df_clean, client):
+    markets = client['binance_historical']['markets']
+    # Convert DataFrame to list of dictionaries
+    formatted_data = df_clean.to_dict('records')
+
+    # Insert data into MongoDB
+    markets.insert_many(formatted_data)
 
 # To automatically launch main from terminal
 if __name__ == "__main__":

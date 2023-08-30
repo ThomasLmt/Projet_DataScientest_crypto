@@ -1,4 +1,4 @@
-# Terminal command : python3 websocket-stream.py > results/websocket-stream.json
+# Terminal command : python3 websocket-stream.py > ../results/websocket-stream.json
 
 import time
 import logging
