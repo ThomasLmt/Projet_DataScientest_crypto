@@ -20,7 +20,6 @@ def main():
 
     # Data source used: Binance API url
     url = 'https://api.binance.com/api/v3/klines'
-    url_trade = 'https://api.binance.com/api/v3/aggTrades'
 
     # Market to study
     money = 'ETH'

@@ -12,3 +12,14 @@ services:
     environment:
       - MONGO_INITDB_ROOT_USERNAME=userAdmin
       - MONGO_INITDB_ROOT_PASSWORD=userPassword
+  postgres:
+    image: postgres:14.2-alpine
+    container_name: postgres_binance_stream
+    volumes:
+      - ./postgres-data:/var/lib/postgresql/data
+    ports:
+      - 5432:5432
+    environment:
+      - POSTGRES_DB=postgres
+      - POSTGRES_USER=useradmin
+      - POSTGRES_PASSWORD=userPassword
