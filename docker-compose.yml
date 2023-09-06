@@ -12,6 +12,7 @@ services:
     environment:
       - MONGO_INITDB_ROOT_USERNAME=userAdmin
       - MONGO_INITDB_ROOT_PASSWORD=userPassword
+
   postgres:
     image: postgres:14.2-alpine
     container_name: postgres_binance_stream
@@ -22,4 +23,4 @@ services:
     environment:
       - POSTGRES_DB=postgres
       - POSTGRES_USER=useradmin
-      - POSTGRES_PASSWORD=userPassword
+      - POSTGRES_PASSWORD=userpassword
