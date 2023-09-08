@@ -1,5 +1,5 @@
 # The code starts a data stream to get live pricing data of ETH markets
-# Terminal command : python3 -u stream.py > results/stream.txt
+# Terminal command : python3 -u stream.py >> results/stream.txt
 import psycopg2
 import asyncio
 import nest_asyncio
@@ -21,7 +21,7 @@ stop_loop = False
 # Params
 timeout = 10
 interval = '1s'
-duration = 10
+duration = 20
 symbol = 'ETH'
 market = 'ETHUSDT'
 
