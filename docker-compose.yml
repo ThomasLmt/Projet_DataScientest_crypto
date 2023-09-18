@@ -42,10 +42,13 @@ services:
       - MONGO_PASSWORD=userPassword
     networks:
       - mongo-pyspark-network
+    volumes:
+      - jupyter_notebook_volume:/home/jovyan/
 
 volumes:
   mongodb_data: {}
   postgres_data: {}
+  jupyter_notebook_volume: {}
 
 networks:
   mongo-pyspark-network:
