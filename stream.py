@@ -41,9 +41,6 @@ async def main():
     # Get the start time
     start_time = time.time()
 
-    # Initialize an empty DataFrame
-    data = []
-
     db_params = {
         'database': 'binance_stream',
         'user': os.getenv('POSTGRES_USER'),

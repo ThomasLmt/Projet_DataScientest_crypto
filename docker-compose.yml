@@ -1,26 +1,51 @@
 version: "3.3"
+
 services:
   mongodb:
-    image: mongo:latest # no mongo shell
-    #image: mongo:5.0
+    image: mongo:latest
     container_name: mongo_binance_historical
     volumes:
-      - ./data:/data/db
-      #- ./data2:/data/db2
+      - mongodb_data:/data/db
     ports:
       - 27017:27017
     environment:
       - MONGO_INITDB_ROOT_USERNAME=userAdmin
       - MONGO_INITDB_ROOT_PASSWORD=userPassword
-
+    networks:
+      - mongo-pyspark-network
   postgres:
     image: postgres:14.2-alpine
     container_name: postgres_binance_stream
     volumes:
-      - ./postgres-data:/var/lib/postgresql/data
+      - postgres_data:/var/lib/postgresql/data
     ports:
       - 5432:5432
     environment:
       - POSTGRES_DB=postgres
       - POSTGRES_USER=useradmin
       - POSTGRES_PASSWORD=userpassword
+
+  pyspark:
+    container_name: pyspark
+    image: pyspark-mongo
+    ports:
+      - "8888:8888"
+    build:
+      context: ./pyspark
+    depends_on:
+      - mongodb
+    environment:
+      - MONGO_HOST=mongodb
+      - MONGO_PORT=27017
+      - MONGO_DB=binance_historical
+      - MONGO_USER=userAdmin
+      - MONGO_PASSWORD=userPassword
+    networks:
+      - mongo-pyspark-network
+
+volumes:
+  mongodb_data: {}
+  postgres_data: {}
+
+networks:
+  mongo-pyspark-network:

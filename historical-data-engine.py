@@ -22,17 +22,16 @@ def main():
     url = 'https://api.binance.com/api/v3/klines'
 
     # Market to study
-    money = 'ETH'
+    money = 'BTC'
 
-    # Interval between records
-    # 1M = 1 month, 1h = 1 hour, 1m = 1 minute, 1s = 1 second
-    #interval = '1m'
+    # Interval between records (1M = 1 month, 1h = 1 hour, 1m = 1 minute, 1s = 1 second)
     interval = '1h'
+    # interval = '1m'
 
     # Period extracted
-    start_period = dt.datetime(2020, 1, 1)
-    # end_period = dt.datetime(2023, 8, 26)
-    end_period = dt.datetime(2020, 1, 2)
+    start_period = dt.datetime(2019, 1, 1)
+    end_period = dt.datetime(2023, 9, 14)
+    # end_period = dt.datetime(2020, 1, 2)
 
     # Trading pairs list (ex: all pairs for ETH)
     trading_pairs = get_trading_pairs(money)
@@ -122,7 +121,7 @@ def engine(url, symbol, interval, start_period, end_period, client):
         # Check format of markets records
         # print(markets.find_one())
 
-# API limitation - 500 records per call
+# API limitation - 1000 records per call
 # Number of calls that will be necessary to extract data
 def get_chunk(start_period, end_period, interval):
     time_difference = end_period - start_period
@@ -132,8 +131,8 @@ def get_chunk(start_period, end_period, interval):
     else:
         nbr_records = time_difference.total_seconds() / 3600
     # Number of necessary calls to get all records
-    nbr_calls = nbr_records/500
-    # size period calculation (nbr of days to get 500 records)
+    nbr_calls = nbr_records/1000
+    # size period calculation (nbr of days to get 1000 records)
     return pd.Timedelta(days=time_difference.days / nbr_calls)
 
 def get_data(url, symbol, interval, start_period, end_period, day_period):
@@ -157,13 +156,13 @@ def get_data(url, symbol, interval, start_period, end_period, day_period):
             # interval 1h
             # print('cycle: ',cycle)
         # interval 1m
-        if cycle == 1 or cycle == 10 or cycle % 800 == 0:
+        if cycle == 1 or cycle == 5 or cycle % 10 == 0:
             print('cycle: ',cycle)
 
         start_period_str = str(int(start_period.timestamp() * 1000))
         end_period_str = str(int((start_period + day_period).timestamp() * 1000))
 
-        par = {'symbol': symbol, 'interval': interval, 'startTime': start_period_str, 'endTime': end_period_str}
+        par = {'symbol': symbol, 'interval': interval, 'startTime': start_period_str, 'endTime': end_period_str, 'limit': 1000}
 
         try:
             response = requests.get(url, params=par)

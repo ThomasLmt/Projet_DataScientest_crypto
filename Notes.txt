@@ -1,6 +1,6 @@
 BINANCE : oldest data 01/01/2017
 LIMIT : 1200 request per min
-CHUNK : 500 records
+CHUNK : 1000 records
 ETH/EUR : market started 03/01/2020 on Binance at 9.00
 EUR/DOLLAR : data from yahoo finance, data size aligned to data availaible on crypto market
 (ex: 03/01/2020 for ETH/EUR). To get hour quote, only 730 last days are available
