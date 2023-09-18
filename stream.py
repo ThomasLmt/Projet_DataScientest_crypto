@@ -1,4 +1,4 @@
-# The code starts a data stream to get live pricing data of ETH markets
+# The code starts a data stream to get live pricing data of BTC markets
 # Terminal command : python3 -u stream.py >> results/stream.txt
 import psycopg2
 import asyncio
@@ -22,8 +22,8 @@ stop_loop = False
 timeout = 10
 interval = '1s'
 duration = 20
-symbol = 'ETH'
-market = 'ETHUSDT'
+symbol = 'BTC'
+market = 'BTCUSDT'
 
 async def main():
     # Create database if first launch
