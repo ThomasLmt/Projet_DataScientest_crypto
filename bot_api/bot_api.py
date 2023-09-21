@@ -31,17 +31,15 @@ loaded_model = LinearRegressionModel.load(model_path)
 
 # Predict btcusdt closing price
 def predict(data):
-    #dense_vector = Vectors.dense(data)
-    #row = Row(features=dense_vector)
-    #new_data = spark.createDataFrame([row])
-    #predictions = loaded_model.transform(new_data)
+    dense_vector = Vectors.dense(data)
+    row = Row(features=dense_vector)
+    new_data = spark.createDataFrame([row])
+    predictions = loaded_model.transform(new_data)
     # Extract the prediction values as a list of floats
-    #prediction_values = predictions.select('prediction').rdd.map(lambda x: x[0]).collect()
+    prediction_values = predictions.select('prediction').rdd.map(lambda x: x[0]).collect()
 
-    # Print the prediction values
-    #predictions_list = [float(value) for value in prediction_values]  # Convert to floats
-    #return predictions_list
-    return data
+    predictions_list = [float(value) for value in prediction_values]  # Convert to floats
+    return predictions_list
 
 @api.get('/')
 def check_api():
