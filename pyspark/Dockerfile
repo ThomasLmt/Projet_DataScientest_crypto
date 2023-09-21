@@ -17,4 +17,12 @@ RUN wget -O /usr/local/spark/jars/mongo-java-driver-3.12.13.jar \
 # To run jupyter without password
 RUN echo "c.NotebookApp.token = ''" >> /home/jovyan/.jupyter/jupyter_notebook_config.py
 
+# Run model-generation.py to create the machine learning model
+#COPY test.txt /home/jovyan/
+
+# Add a sleep for 10 seconds to allow time for MongoDB to fully initialize
+# RUN sleep 10
+
+#RUN python /home/jovyan/model-generation.py
+
 USER $NB_UID

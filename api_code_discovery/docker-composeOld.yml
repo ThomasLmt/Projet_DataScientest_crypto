@@ -12,7 +12,7 @@ services:
       - MONGO_INITDB_ROOT_USERNAME=userAdmin
       - MONGO_INITDB_ROOT_PASSWORD=userPassword
     networks:
-      - pyspark-network
+      - mongo-pyspark-network
   postgres:
     image: postgres:14.2-alpine
     container_name: postgres_binance_stream
@@ -25,17 +25,16 @@ services:
       - POSTGRES_USER=useradmin
       - POSTGRES_PASSWORD=userpassword
     networks:
-      - pyspark-network
+      - mongo-pyspark-network
   pyspark:
+    depends_on:
+      - mongodb
     container_name: pyspark
     image: pyspark-mongo
     ports:
       - "8888:8888"
     build:
       context: ./pyspark
-      dockerfile: Dockerfile
-    depends_on:
-      - mongodb
     environment:
       - MONGO_HOST=mongodb
       - MONGO_PORT=27017
@@ -43,21 +42,9 @@ services:
       - MONGO_USER=userAdmin
       - MONGO_PASSWORD=userPassword
     networks:
-      - pyspark-network
+      - mongo-pyspark-network
     volumes:
       - jupyter_notebook_volume:/home/jovyan/
-  botapi:
-    container_name: botapi
-    build:
-      context: ./bot_api
-    depends_on:
-      - pyspark
-    ports:
-      - "8000:8000"
-    volumes:
-      - jupyter_notebook_volume:/home/jovyan/
-    networks:
-      - pyspark-network
 
 volumes:
   mongodb_data: {}
@@ -65,4 +52,4 @@ volumes:
   jupyter_notebook_volume: {}
 
 networks:
-  pyspark-network:
+  mongo-pyspark-network:
