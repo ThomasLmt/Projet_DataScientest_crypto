@@ -46,6 +46,9 @@ docker exec pyspark python /home/jovyan/model-generation.py
 
 # only if model does not exist
 # copy model generated in pyspark container in botapi container
+# VM
+docker cp pyspark:/home/jovyan/work/. jupyter_notebook_volume/
+# MacOS
 docker cp pyspark:/home/jovyan/work/bot_api_model/ jupyter_notebook_volume/
 
 # To do each time after docker-compose up -d
