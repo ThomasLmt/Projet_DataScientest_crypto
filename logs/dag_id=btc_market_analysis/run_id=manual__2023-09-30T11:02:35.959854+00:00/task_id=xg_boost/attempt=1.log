@@ -1,0 +1,13 @@
+[2023-09-30T11:06:59.794+0000] {taskinstance.py:1157} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: btc_market_analysis.xg_boost manual__2023-09-30T11:02:35.959854+00:00 [queued]>
+[2023-09-30T11:06:59.867+0000] {taskinstance.py:1157} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: btc_market_analysis.xg_boost manual__2023-09-30T11:02:35.959854+00:00 [queued]>
+[2023-09-30T11:06:59.871+0000] {taskinstance.py:1359} INFO - Starting attempt 1 of 2
+[2023-09-30T11:07:00.075+0000] {taskinstance.py:1380} INFO - Executing <Task(PythonOperator): xg_boost> on 2023-09-30 11:02:35.959854+00:00
+[2023-09-30T11:07:00.341+0000] {standard_task_runner.py:57} INFO - Started process 2063 to run task
+[2023-09-30T11:07:00.387+0000] {standard_task_runner.py:84} INFO - Running: ['airflow', 'tasks', 'run', 'btc_market_analysis', 'xg_boost', 'manual__2023-09-30T11:02:35.959854+00:00', '--job-id', '41', '--raw', '--subdir', 'DAGS_FOLDER/crypto_dag.py', '--cfg-path', '/tmp/tmprqydhn6b']
+[2023-09-30T11:07:00.398+0000] {standard_task_runner.py:85} INFO - Job 41: Subtask xg_boost
+[2023-09-30T11:07:01.352+0000] {task_command.py:415} INFO - Running <TaskInstance: btc_market_analysis.xg_boost manual__2023-09-30T11:02:35.959854+00:00 [running]> on host bdec796fb08e
+[2023-09-30T11:07:01.699+0000] {taskinstance.py:1660} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='airflow' AIRFLOW_CTX_DAG_ID='btc_market_analysis' AIRFLOW_CTX_TASK_ID='xg_boost' AIRFLOW_CTX_EXECUTION_DATE='2023-09-30T11:02:35.959854+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2023-09-30T11:02:35.959854+00:00'
+[2023-09-30T11:07:14.948+0000] {python.py:194} INFO - Done. Returned value was: None
+[2023-09-30T11:07:14.988+0000] {taskinstance.py:1398} INFO - Marking task as SUCCESS. dag_id=btc_market_analysis, task_id=xg_boost, execution_date=20230930T110235, start_date=20230930T110659, end_date=20230930T110714
+[2023-09-30T11:07:15.103+0000] {local_task_job_runner.py:228} INFO - Task exited with return code 0
+[2023-09-30T11:07:15.248+0000] {taskinstance.py:2776} INFO - 0 downstream tasks scheduled from follow-on schedule check

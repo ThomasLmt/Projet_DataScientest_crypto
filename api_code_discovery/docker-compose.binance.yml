@@ -1,0 +1,76 @@
+version: "3.3"
+
+services:
+  mongodb:
+    image: mongo:latest
+    container_name: mongo_binance_historical
+    volumes:
+      - mongodb_data:/data/db
+    ports:
+      - 27017:27017
+    environment:
+      - MONGO_INITDB_ROOT_USERNAME=userAdmin
+      - MONGO_INITDB_ROOT_PASSWORD=userPassword
+    networks:
+      - shared_network
+  postgres:
+    image: postgres:14.2-alpine
+    container_name: postgres_binance_stream
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    ports:
+      - 5432:5432
+    environment:
+      - POSTGRES_DB=postgres
+      - POSTGRES_USER=useradmin
+      - POSTGRES_PASSWORD=userpassword
+    networks:
+      - shared_network
+    healthcheck:
+      test: [ "CMD", "pg_isready", "-U", "useradmin" ]
+      interval: 10s
+      retries: 5
+      start_period: 5s
+    restart: always
+  pyspark:
+    container_name: pyspark
+    image: pyspark-mongo
+    ports:
+      - "8888:8888"
+    build:
+      context: ./pyspark
+      dockerfile: Dockerfile
+    depends_on:
+      - mongodb
+    environment:
+      - MONGO_HOST=mongodb
+      - MONGO_PORT=27017
+      - MONGO_DB=binance_historical
+      - MONGO_USER=userAdmin
+      - MONGO_PASSWORD=userPassword
+    networks:
+      - shared_network
+    volumes:
+      - jupyter_notebook_volume:/home/jovyan/
+  botapi:
+    container_name: botapi
+    build:
+      context: ./bot_api
+    depends_on:
+      - pyspark
+    ports:
+      - "8000:8000"
+    volumes:
+      - jupyter_notebook_volume:/home/jovyan/
+    networks:
+      - shared_network
+
+volumes:
+  mongodb_data: {}
+  postgres_data: {}
+  jupyter_notebook_volume: {}
+
+networks:
+  shared_network:
+    driver: bridge
+    name: shared_network

@@ -1,0 +1,158 @@
+[2023-09-30T08:24:20.914+0000] {taskinstance.py:1157} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: btc_market_analysis.load_data_from_mongo manual__2023-09-30T08:24:16.113344+00:00 [queued]>
+[2023-09-30T08:24:20.925+0000] {taskinstance.py:1157} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: btc_market_analysis.load_data_from_mongo manual__2023-09-30T08:24:16.113344+00:00 [queued]>
+[2023-09-30T08:24:20.927+0000] {taskinstance.py:1359} INFO - Starting attempt 1 of 2
+[2023-09-30T08:24:20.949+0000] {taskinstance.py:1380} INFO - Executing <Task(PythonOperator): load_data_from_mongo> on 2023-09-30 08:24:16.113344+00:00
+[2023-09-30T08:24:20.968+0000] {standard_task_runner.py:57} INFO - Started process 104 to run task
+[2023-09-30T08:24:20.982+0000] {standard_task_runner.py:84} INFO - Running: ['airflow', 'tasks', 'run', 'btc_market_analysis', 'load_data_from_mongo', 'manual__2023-09-30T08:24:16.113344+00:00', '--job-id', '16', '--raw', '--subdir', 'DAGS_FOLDER/crypto_dag.py', '--cfg-path', '/tmp/tmp1_7zt60b']
+[2023-09-30T08:24:20.984+0000] {standard_task_runner.py:85} INFO - Job 16: Subtask load_data_from_mongo
+[2023-09-30T08:24:21.145+0000] {task_command.py:415} INFO - Running <TaskInstance: btc_market_analysis.load_data_from_mongo manual__2023-09-30T08:24:16.113344+00:00 [running]> on host 0f61cb4e8da2
+[2023-09-30T08:24:21.246+0000] {taskinstance.py:1660} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='airflow' AIRFLOW_CTX_DAG_ID='btc_market_analysis' AIRFLOW_CTX_TASK_ID='load_data_from_mongo' AIRFLOW_CTX_EXECUTION_DATE='2023-09-30T08:24:16.113344+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2023-09-30T08:24:16.113344+00:00'
+[2023-09-30T08:24:32.083+0000] {taskinstance.py:1935} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/operators/python.py", line 192, in execute
+    return_value = self.execute_callable()
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/operators/python.py", line 209, in execute_callable
+    return self.python_callable(*self.op_args, **self.op_kwargs)
+  File "/opt/airflow/dags/crypto_dag.py", line 87, in load_data_from_mongo
+    df = spark.read.format('mongo') \
+  File "/home/airflow/.local/lib/python3.8/site-packages/pyspark/sql/readwriter.py", line 314, in load
+    return self._df(self._jreader.load())
+  File "/home/airflow/.local/lib/python3.8/site-packages/py4j/java_gateway.py", line 1322, in __call__
+    return_value = get_return_value(
+  File "/home/airflow/.local/lib/python3.8/site-packages/pyspark/errors/exceptions/captured.py", line 179, in deco
+    return f(*a, **kw)
+  File "/home/airflow/.local/lib/python3.8/site-packages/py4j/protocol.py", line 326, in get_return_value
+    raise Py4JJavaError(
+py4j.protocol.Py4JJavaError: An error occurred while calling o38.load.
+: com.mongodb.MongoSecurityException: Exception authenticating MongoCredential{mechanism=SCRAM-SHA-1, userName='useradmin', source='admin', password=<hidden>, mechanismProperties=<hidden>}
+	at com.mongodb.internal.connection.SaslAuthenticator.wrapException(SaslAuthenticator.java:201)
+	at com.mongodb.internal.connection.SaslAuthenticator.access$300(SaslAuthenticator.java:40)
+	at com.mongodb.internal.connection.SaslAuthenticator$1.run(SaslAuthenticator.java:78)
+	at com.mongodb.internal.connection.SaslAuthenticator$1.run(SaslAuthenticator.java:47)
+	at com.mongodb.internal.connection.SaslAuthenticator.doAsSubject(SaslAuthenticator.java:207)
+	at com.mongodb.internal.connection.SaslAuthenticator.authenticate(SaslAuthenticator.java:47)
+	at com.mongodb.internal.connection.InternalStreamConnectionInitializer.authenticate(InternalStreamConnectionInitializer.java:152)
+	at com.mongodb.internal.connection.InternalStreamConnectionInitializer.initialize(InternalStreamConnectionInitializer.java:61)
+	at com.mongodb.internal.connection.InternalStreamConnection.open(InternalStreamConnection.java:128)
+	at com.mongodb.internal.connection.UsageTrackingInternalConnection.open(UsageTrackingInternalConnection.java:50)
+	at com.mongodb.internal.connection.DefaultConnectionPool$PooledConnection.open(DefaultConnectionPool.java:435)
+	at com.mongodb.internal.connection.DefaultConnectionPool.get(DefaultConnectionPool.java:117)
+	at com.mongodb.internal.connection.DefaultConnectionPool.get(DefaultConnectionPool.java:102)
+	at com.mongodb.internal.connection.DefaultServer.getConnection(DefaultServer.java:90)
+	at com.mongodb.internal.binding.ClusterBinding$ClusterBindingConnectionSource.getConnection(ClusterBinding.java:119)
+	at com.mongodb.internal.operation.CommandOperationHelper$5.call(CommandOperationHelper.java:207)
+	at com.mongodb.internal.operation.OperationHelper.withReadConnectionSource(OperationHelper.java:462)
+	at com.mongodb.internal.operation.CommandOperationHelper.executeCommand(CommandOperationHelper.java:203)
+	at com.mongodb.internal.operation.CommandOperationHelper.executeCommand(CommandOperationHelper.java:198)
+	at com.mongodb.internal.operation.CommandReadOperation.execute(CommandReadOperation.java:58)
+	at com.mongodb.client.internal.MongoClientDelegate$DelegateOperationExecutor.execute(MongoClientDelegate.java:190)
+	at com.mongodb.client.internal.MongoDatabaseImpl.executeCommand(MongoDatabaseImpl.java:194)
+	at com.mongodb.client.internal.MongoDatabaseImpl.runCommand(MongoDatabaseImpl.java:163)
+	at com.mongodb.client.internal.MongoDatabaseImpl.runCommand(MongoDatabaseImpl.java:158)
+	at com.mongodb.spark.MongoConnector.$anonfun$hasSampleAggregateOperator$1(MongoConnector.scala:234)
+	at com.mongodb.spark.MongoConnector.$anonfun$withDatabaseDo$1(MongoConnector.scala:171)
+	at com.mongodb.spark.MongoConnector.withMongoClientDo(MongoConnector.scala:154)
+	at com.mongodb.spark.MongoConnector.withDatabaseDo(MongoConnector.scala:171)
+	at com.mongodb.spark.MongoConnector.hasSampleAggregateOperator(MongoConnector.scala:234)
+	at com.mongodb.spark.rdd.MongoRDD.hasSampleAggregateOperator$lzycompute(MongoRDD.scala:221)
+	at com.mongodb.spark.rdd.MongoRDD.hasSampleAggregateOperator(MongoRDD.scala:221)
+	at com.mongodb.spark.sql.MongoInferSchema$.apply(MongoInferSchema.scala:68)
+	at com.mongodb.spark.sql.DefaultSource.constructRelation(DefaultSource.scala:97)
+	at com.mongodb.spark.sql.DefaultSource.createRelation(DefaultSource.scala:50)
+	at org.apache.spark.sql.execution.datasources.DataSource.resolveRelation(DataSource.scala:346)
+	at org.apache.spark.sql.DataFrameReader.loadV1Source(DataFrameReader.scala:229)
+	at org.apache.spark.sql.DataFrameReader.$anonfun$load$2(DataFrameReader.scala:211)
+	at scala.Option.getOrElse(Option.scala:189)
+	at org.apache.spark.sql.DataFrameReader.load(DataFrameReader.scala:211)
+	at org.apache.spark.sql.DataFrameReader.load(DataFrameReader.scala:172)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at py4j.reflection.MethodInvoker.invoke(MethodInvoker.java:244)
+	at py4j.reflection.ReflectionEngine.invoke(ReflectionEngine.java:374)
+	at py4j.Gateway.invoke(Gateway.java:282)
+	at py4j.commands.AbstractCommand.invokeMethod(AbstractCommand.java:132)
+	at py4j.commands.CallCommand.execute(CallCommand.java:79)
+	at py4j.ClientServerConnection.waitForCommands(ClientServerConnection.java:182)
+	at py4j.ClientServerConnection.run(ClientServerConnection.java:106)
+	at java.base/java.lang.Thread.run(Thread.java:829)
+Caused by: com.mongodb.MongoCommandException: Command failed with error 18 (AuthenticationFailed): 'Authentication failed.' on server mongodb:27017. The full response is {"ok": 0.0, "errmsg": "Authentication failed.", "code": 18, "codeName": "AuthenticationFailed"}
+	at com.mongodb.internal.connection.ProtocolHelper.getCommandFailureException(ProtocolHelper.java:175)
+	at com.mongodb.internal.connection.InternalStreamConnection.receiveCommandMessageResponse(InternalStreamConnection.java:302)
+	at com.mongodb.internal.connection.InternalStreamConnection.sendAndReceive(InternalStreamConnection.java:258)
+	at com.mongodb.internal.connection.CommandHelper.sendAndReceive(CommandHelper.java:83)
+	at com.mongodb.internal.connection.CommandHelper.executeCommand(CommandHelper.java:33)
+	at com.mongodb.internal.connection.SaslAuthenticator.sendSaslStart(SaslAuthenticator.java:158)
+	at com.mongodb.internal.connection.SaslAuthenticator.access$100(SaslAuthenticator.java:40)
+	at com.mongodb.internal.connection.SaslAuthenticator$1.run(SaslAuthenticator.java:54)
+	... 49 more
+
+[2023-09-30T08:24:32.116+0000] {taskinstance.py:1398} INFO - Marking task as UP_FOR_RETRY. dag_id=btc_market_analysis, task_id=load_data_from_mongo, execution_date=20230930T082416, start_date=20230930T082420, end_date=20230930T082432
+[2023-09-30T08:24:32.149+0000] {standard_task_runner.py:104} ERROR - Failed to execute job 16 for task load_data_from_mongo (An error occurred while calling o38.load.
+: com.mongodb.MongoSecurityException: Exception authenticating MongoCredential{mechanism=SCRAM-SHA-1, userName='useradmin', source='admin', password=<hidden>, mechanismProperties=<hidden>}
+	at com.mongodb.internal.connection.SaslAuthenticator.wrapException(SaslAuthenticator.java:201)
+	at com.mongodb.internal.connection.SaslAuthenticator.access$300(SaslAuthenticator.java:40)
+	at com.mongodb.internal.connection.SaslAuthenticator$1.run(SaslAuthenticator.java:78)
+	at com.mongodb.internal.connection.SaslAuthenticator$1.run(SaslAuthenticator.java:47)
+	at com.mongodb.internal.connection.SaslAuthenticator.doAsSubject(SaslAuthenticator.java:207)
+	at com.mongodb.internal.connection.SaslAuthenticator.authenticate(SaslAuthenticator.java:47)
+	at com.mongodb.internal.connection.InternalStreamConnectionInitializer.authenticate(InternalStreamConnectionInitializer.java:152)
+	at com.mongodb.internal.connection.InternalStreamConnectionInitializer.initialize(InternalStreamConnectionInitializer.java:61)
+	at com.mongodb.internal.connection.InternalStreamConnection.open(InternalStreamConnection.java:128)
+	at com.mongodb.internal.connection.UsageTrackingInternalConnection.open(UsageTrackingInternalConnection.java:50)
+	at com.mongodb.internal.connection.DefaultConnectionPool$PooledConnection.open(DefaultConnectionPool.java:435)
+	at com.mongodb.internal.connection.DefaultConnectionPool.get(DefaultConnectionPool.java:117)
+	at com.mongodb.internal.connection.DefaultConnectionPool.get(DefaultConnectionPool.java:102)
+	at com.mongodb.internal.connection.DefaultServer.getConnection(DefaultServer.java:90)
+	at com.mongodb.internal.binding.ClusterBinding$ClusterBindingConnectionSource.getConnection(ClusterBinding.java:119)
+	at com.mongodb.internal.operation.CommandOperationHelper$5.call(CommandOperationHelper.java:207)
+	at com.mongodb.internal.operation.OperationHelper.withReadConnectionSource(OperationHelper.java:462)
+	at com.mongodb.internal.operation.CommandOperationHelper.executeCommand(CommandOperationHelper.java:203)
+	at com.mongodb.internal.operation.CommandOperationHelper.executeCommand(CommandOperationHelper.java:198)
+	at com.mongodb.internal.operation.CommandReadOperation.execute(CommandReadOperation.java:58)
+	at com.mongodb.client.internal.MongoClientDelegate$DelegateOperationExecutor.execute(MongoClientDelegate.java:190)
+	at com.mongodb.client.internal.MongoDatabaseImpl.executeCommand(MongoDatabaseImpl.java:194)
+	at com.mongodb.client.internal.MongoDatabaseImpl.runCommand(MongoDatabaseImpl.java:163)
+	at com.mongodb.client.internal.MongoDatabaseImpl.runCommand(MongoDatabaseImpl.java:158)
+	at com.mongodb.spark.MongoConnector.$anonfun$hasSampleAggregateOperator$1(MongoConnector.scala:234)
+	at com.mongodb.spark.MongoConnector.$anonfun$withDatabaseDo$1(MongoConnector.scala:171)
+	at com.mongodb.spark.MongoConnector.withMongoClientDo(MongoConnector.scala:154)
+	at com.mongodb.spark.MongoConnector.withDatabaseDo(MongoConnector.scala:171)
+	at com.mongodb.spark.MongoConnector.hasSampleAggregateOperator(MongoConnector.scala:234)
+	at com.mongodb.spark.rdd.MongoRDD.hasSampleAggregateOperator$lzycompute(MongoRDD.scala:221)
+	at com.mongodb.spark.rdd.MongoRDD.hasSampleAggregateOperator(MongoRDD.scala:221)
+	at com.mongodb.spark.sql.MongoInferSchema$.apply(MongoInferSchema.scala:68)
+	at com.mongodb.spark.sql.DefaultSource.constructRelation(DefaultSource.scala:97)
+	at com.mongodb.spark.sql.DefaultSource.createRelation(DefaultSource.scala:50)
+	at org.apache.spark.sql.execution.datasources.DataSource.resolveRelation(DataSource.scala:346)
+	at org.apache.spark.sql.DataFrameReader.loadV1Source(DataFrameReader.scala:229)
+	at org.apache.spark.sql.DataFrameReader.$anonfun$load$2(DataFrameReader.scala:211)
+	at scala.Option.getOrElse(Option.scala:189)
+	at org.apache.spark.sql.DataFrameReader.load(DataFrameReader.scala:211)
+	at org.apache.spark.sql.DataFrameReader.load(DataFrameReader.scala:172)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at py4j.reflection.MethodInvoker.invoke(MethodInvoker.java:244)
+	at py4j.reflection.ReflectionEngine.invoke(ReflectionEngine.java:374)
+	at py4j.Gateway.invoke(Gateway.java:282)
+	at py4j.commands.AbstractCommand.invokeMethod(AbstractCommand.java:132)
+	at py4j.commands.CallCommand.execute(CallCommand.java:79)
+	at py4j.ClientServerConnection.waitForCommands(ClientServerConnection.java:182)
+	at py4j.ClientServerConnection.run(ClientServerConnection.java:106)
+	at java.base/java.lang.Thread.run(Thread.java:829)
+Caused by: com.mongodb.MongoCommandException: Command failed with error 18 (AuthenticationFailed): 'Authentication failed.' on server mongodb:27017. The full response is {"ok": 0.0, "errmsg": "Authentication failed.", "code": 18, "codeName": "AuthenticationFailed"}
+	at com.mongodb.internal.connection.ProtocolHelper.getCommandFailureException(ProtocolHelper.java:175)
+	at com.mongodb.internal.connection.InternalStreamConnection.receiveCommandMessageResponse(InternalStreamConnection.java:302)
+	at com.mongodb.internal.connection.InternalStreamConnection.sendAndReceive(InternalStreamConnection.java:258)
+	at com.mongodb.internal.connection.CommandHelper.sendAndReceive(CommandHelper.java:83)
+	at com.mongodb.internal.connection.CommandHelper.executeCommand(CommandHelper.java:33)
+	at com.mongodb.internal.connection.SaslAuthenticator.sendSaslStart(SaslAuthenticator.java:158)
+	at com.mongodb.internal.connection.SaslAuthenticator.access$100(SaslAuthenticator.java:40)
+	at com.mongodb.internal.connection.SaslAuthenticator$1.run(SaslAuthenticator.java:54)
+	... 49 more
+; 104)
+[2023-09-30T08:24:32.189+0000] {local_task_job_runner.py:228} INFO - Task exited with return code 1
+[2023-09-30T08:24:32.254+0000] {taskinstance.py:2776} INFO - 0 downstream tasks scheduled from follow-on schedule check

@@ -1,0 +1,44 @@
+[2023-09-30T08:45:54.010+0000] {taskinstance.py:1157} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: btc_market_analysis.preprocess_data manual__2023-09-30T08:39:05.867435+00:00 [queued]>
+[2023-09-30T08:45:54.017+0000] {taskinstance.py:1157} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: btc_market_analysis.preprocess_data manual__2023-09-30T08:39:05.867435+00:00 [queued]>
+[2023-09-30T08:45:54.018+0000] {taskinstance.py:1359} INFO - Starting attempt 2 of 2
+[2023-09-30T08:45:54.029+0000] {taskinstance.py:1380} INFO - Executing <Task(PythonOperator): preprocess_data> on 2023-09-30 08:39:05.867435+00:00
+[2023-09-30T08:45:54.048+0000] {standard_task_runner.py:57} INFO - Started process 994 to run task
+[2023-09-30T08:45:54.052+0000] {standard_task_runner.py:84} INFO - Running: ['airflow', 'tasks', 'run', 'btc_market_analysis', 'preprocess_data', 'manual__2023-09-30T08:39:05.867435+00:00', '--job-id', '20', '--raw', '--subdir', 'DAGS_FOLDER/dag.py', '--cfg-path', '/tmp/tmp329h__iv']
+[2023-09-30T08:45:54.054+0000] {standard_task_runner.py:85} INFO - Job 20: Subtask preprocess_data
+[2023-09-30T08:45:54.110+0000] {task_command.py:415} INFO - Running <TaskInstance: btc_market_analysis.preprocess_data manual__2023-09-30T08:39:05.867435+00:00 [running]> on host 0f61cb4e8da2
+[2023-09-30T08:45:54.200+0000] {taskinstance.py:1660} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='airflow' AIRFLOW_CTX_DAG_ID='btc_market_analysis' AIRFLOW_CTX_TASK_ID='preprocess_data' AIRFLOW_CTX_EXECUTION_DATE='2023-09-30T08:39:05.867435+00:00' AIRFLOW_CTX_TRY_NUMBER='2' AIRFLOW_CTX_DAG_RUN_ID='manual__2023-09-30T08:39:05.867435+00:00'
+[2023-09-30T08:46:01.848+0000] {taskinstance.py:1935} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/operators/python.py", line 192, in execute
+    return_value = self.execute_callable()
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/operators/python.py", line 209, in execute_callable
+    return self.python_callable(*self.op_args, **self.op_kwargs)
+  File "/opt/airflow/dags/dag.py", line 147, in preprocess_data
+    df_merge = df_merge.select(df_merge.datetime.alias('datetime'), 'market', 'close_time', 'day', 'month', 'year', 'day_of_week', 'open', 'high', 'low', 'close', 'rolling_avg_7d', 'nbr_trades', 'volume')
+  File "/home/airflow/.local/lib/python3.8/site-packages/pyspark/sql/dataframe.py", line 3223, in select
+    jdf = self._jdf.select(self._jcols(*cols))
+  File "/home/airflow/.local/lib/python3.8/site-packages/py4j/java_gateway.py", line 1322, in __call__
+    return_value = get_return_value(
+  File "/home/airflow/.local/lib/python3.8/site-packages/pyspark/errors/exceptions/captured.py", line 185, in deco
+    raise converted from None
+pyspark.errors.exceptions.captured.AnalysisException: [UNRESOLVED_COLUMN.WITH_SUGGESTION] A column or function parameter with name `day` cannot be resolved. Did you mean one of the following? [`date`, `qav`, `_id`, `low`, `high`].;
+'Project [datetime#4 AS datetime#50, market#7, close_time#2, 'day, 'month, 'year, 'day_of_week, open#9, high#5, low#6, close#1, rolling_avg_7d#32, nbr_trades#8, volume#14]
++- Project [_id#0, close#1, close_time#2, date#3, datetime#4, high#5, low#6, market#7, nbr_trades#8, open#9, qav#10, taker_base_vol#11, taker_quote_vol#12, unused_field#13, volume#14, rolling_avg_7d#32]
+   +- Project [_id#0, close#1, close_time#2, date#3, datetime#4, high#5, low#6, market#7, nbr_trades#8, open#9, qav#10, taker_base_vol#11, taker_quote_vol#12, unused_field#13, volume#14, _we0#33, cast(_we0#33 as double) AS rolling_avg_7d#32]
+      +- Window [avg(close#1) windowspecdefinition(market#7, datetime#4 ASC NULLS FIRST, specifiedwindowframe(RowFrame, -6, currentrow$())) AS _we0#33], [market#7], [datetime#4 ASC NULLS FIRST]
+         +- Project [_id#0, close#1, close_time#2, date#3, datetime#4, high#5, low#6, market#7, nbr_trades#8, open#9, qav#10, taker_base_vol#11, taker_quote_vol#12, unused_field#13, volume#14]
+            +- Filter ((((market#7 = BTCEUR) OR (market#7 = BTCDAI)) OR (market#7 = BTCGBP)) OR (market#7 = BTCUSDC))
+               +- Relation [_id#0,close#1,close_time#2,date#3,datetime#4,high#5,low#6,market#7,nbr_trades#8,open#9,qav#10,taker_base_vol#11,taker_quote_vol#12,unused_field#13,volume#14] parquet
+
+[2023-09-30T08:46:01.916+0000] {taskinstance.py:1398} INFO - Marking task as FAILED. dag_id=btc_market_analysis, task_id=preprocess_data, execution_date=20230930T083905, start_date=20230930T084554, end_date=20230930T084601
+[2023-09-30T08:46:01.950+0000] {standard_task_runner.py:104} ERROR - Failed to execute job 20 for task preprocess_data ([UNRESOLVED_COLUMN.WITH_SUGGESTION] A column or function parameter with name `day` cannot be resolved. Did you mean one of the following? [`date`, `qav`, `_id`, `low`, `high`].;
+'Project [datetime#4 AS datetime#50, market#7, close_time#2, 'day, 'month, 'year, 'day_of_week, open#9, high#5, low#6, close#1, rolling_avg_7d#32, nbr_trades#8, volume#14]
++- Project [_id#0, close#1, close_time#2, date#3, datetime#4, high#5, low#6, market#7, nbr_trades#8, open#9, qav#10, taker_base_vol#11, taker_quote_vol#12, unused_field#13, volume#14, rolling_avg_7d#32]
+   +- Project [_id#0, close#1, close_time#2, date#3, datetime#4, high#5, low#6, market#7, nbr_trades#8, open#9, qav#10, taker_base_vol#11, taker_quote_vol#12, unused_field#13, volume#14, _we0#33, cast(_we0#33 as double) AS rolling_avg_7d#32]
+      +- Window [avg(close#1) windowspecdefinition(market#7, datetime#4 ASC NULLS FIRST, specifiedwindowframe(RowFrame, -6, currentrow$())) AS _we0#33], [market#7], [datetime#4 ASC NULLS FIRST]
+         +- Project [_id#0, close#1, close_time#2, date#3, datetime#4, high#5, low#6, market#7, nbr_trades#8, open#9, qav#10, taker_base_vol#11, taker_quote_vol#12, unused_field#13, volume#14]
+            +- Filter ((((market#7 = BTCEUR) OR (market#7 = BTCDAI)) OR (market#7 = BTCGBP)) OR (market#7 = BTCUSDC))
+               +- Relation [_id#0,close#1,close_time#2,date#3,datetime#4,high#5,low#6,market#7,nbr_trades#8,open#9,qav#10,taker_base_vol#11,taker_quote_vol#12,unused_field#13,volume#14] parquet
+; 994)
+[2023-09-30T08:46:01.988+0000] {local_task_job_runner.py:228} INFO - Task exited with return code 1
+[2023-09-30T08:46:02.065+0000] {taskinstance.py:2776} INFO - 0 downstream tasks scheduled from follow-on schedule check
