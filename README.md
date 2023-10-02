@@ -32,10 +32,10 @@ python3 -u historical-data-engine.py > engine.txt
 
 # Use VM
 
-- Access airflow
+- Access airflow:
 http://localhost:8080/
 
-- Access jupyter notebook
+- Access jupyter notebook:
 http://localhost:8888/
 
 *** *** *** *** *** ***
