@@ -28,7 +28,7 @@ chmod +x setup.sh
 ./setup.sh
 
 ## Put the period in historical-data-engine.py
-python3 -u historical-data-engine.py > engine.txt
+python3 -u historical-data-engine.py > results/engine.txt
 
 # Use VM
 
