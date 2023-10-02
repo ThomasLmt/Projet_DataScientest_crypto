@@ -41,7 +41,7 @@ http://localhost:8888/
 *** *** *** *** *** ***
 
 # Used for tests
-- Uses a MongoDB market collection using historical-data-engine-FG.py and generating a machine learning model using service pyspark
+- Uses a MongoDB market collection using historical-data-engine-FG.py (works also with historical-data-engine.py) and generating a machine learning model using service pyspark
 - Models is copied on the bot_api at the end of the process and can be used by bot_apy.py
 
 ## To do only if the model does not already exist or need to be updated
