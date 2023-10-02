@@ -52,8 +52,10 @@ docker cp ./pyspark/model-generation.py pyspark:/home/jovyan/model-generation.py
 docker exec pyspark python /home/jovyan/model-generation.py
 
 - copy model generated in pyspark container in botapi container<br>
+
   <b>VM</b><br>
 docker cp pyspark:/home/jovyan/work/. jupyter_notebook_volume/<br>
+
   <b>MacOS</b><br>
 docker cp pyspark:/home/jovyan/work/bot_api_model/ jupyter_notebook_volume/
 
@@ -61,7 +63,7 @@ docker cp pyspark:/home/jovyan/work/bot_api_model/ jupyter_notebook_volume/
 docker cp jupyter_notebook_volume/. botapi:/app/models/
 
 # To test the api put localhost or the IP of your VM
-- Check running
+- Check running<br>
 http://localhost:8000
-- Check prediction
+- Check prediction<br>
 http://localhost:8000/prediction?eur_avg=30000.1&usdc_avg=30000.1&dai_avg=30000.1&gbp_avg=30000.1
