@@ -13,12 +13,12 @@ git clone git@github.com:FGaloha/binance_bot.git
 
 ## Check .env contains necessary variables
 touch .env
-- Add the following variables
+- Add the following variables<br>
 MONGO_USER=userAdmin<br>
 MONGO_PWD=userPassword<br>
 POSTGRES_USER=useradmin<br>
 POSTGRES_PASSWORD=userpassword<br>
-- Generate from the terminal those used by airflow
+- Generate from the terminal those used by airflow<br>
 echo -e "AIRFLOW_UID=$(id -u)\nAIRFLOW_GID=0" >> .env
 
 ## Be sure you have the rights
@@ -45,16 +45,16 @@ http://localhost:8888/
 - Models is copied on the bot_api at the end of the process and can be used by bot_apy.py
 
 ## To do only if the model does not already exist or need to be updated
-- The COPY function does not work on the jupyter notebook image so it is managed after container creation
+- The COPY function does not work on the jupyter notebook image so it is managed after container creation<br>
 docker cp ./pyspark/model-generation.py pyspark:/home/jovyan/model-generation.py
 
-- generate model executing model-generation.py in pyspark container
+- generate model executing model-generation.py in pyspark container<br>
 docker exec pyspark python /home/jovyan/model-generation.py
 
-- copy model generated in pyspark container in botapi container
-  <b>VM</b>
-docker cp pyspark:/home/jovyan/work/. jupyter_notebook_volume/
-  <b>MacOS</b>
+- copy model generated in pyspark container in botapi container<br>
+  <b>VM</b><br>
+docker cp pyspark:/home/jovyan/work/. jupyter_notebook_volume/<br>
+  <b>MacOS</b><br>
 docker cp pyspark:/home/jovyan/work/bot_api_model/ jupyter_notebook_volume/
 
 ## To do each time after docker-compose up -d
