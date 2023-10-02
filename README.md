@@ -14,10 +14,10 @@ git clone git@github.com:FGaloha/binance_bot.git
 ## Check .env contains necessary variables
 touch .env
 - Add the following variables
-MONGO_USER=userAdmin
-MONGO_PWD=userPassword
-POSTGRES_USER=useradmin
-POSTGRES_PASSWORD=userpassword
+MONGO_USER=userAdmin<br>
+MONGO_PWD=userPassword<br>
+POSTGRES_USER=useradmin<br>
+POSTGRES_PASSWORD=userpassword<br>
 - Generate from the terminal those used by airflow
 echo -e "AIRFLOW_UID=$(id -u)\nAIRFLOW_GID=0" >> .env
 
@@ -44,7 +44,7 @@ http://localhost:8888/
 - Uses a MongoDB market collection using historical-data-engine-FG.py and generating a machine learning model using service pyspark
 - Models is copied on the bot_api at the end of the process and can be used by bot_apy.py
 
-## To do only if the model does not already exist
+## To do only if the model does not already exist or need to be updated
 - The COPY function does not work on the jupyter notebook image so it is managed after container creation
 docker cp ./pyspark/model-generation.py pyspark:/home/jovyan/model-generation.py
 
