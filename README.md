@@ -1,10 +1,10 @@
 # Set up VM
 
 ## Packages
-pip install pandas
-pip install matplotlib
-pip install pymongo
-pip install python-dotenv
+pip install pandas<br>
+pip install matplotlib<br>
+pip install pymongo<br>
+pip install python-dotenv<br>
 
 ## Copy the folder Bot_binance on the VM
 - Drag & drop the folder using Visual Studio
