@@ -1,0 +1,4 @@
+200
+{'message': 'API ready to be used'}
+200
+11746.02870000001

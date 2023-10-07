@@ -18,6 +18,7 @@ x-airflow-common:
     AIRFLOW__CORE__DAGS_ARE_PAUSED_AT_CREATION: 'true'
     AIRFLOW__CORE__LOAD_EXAMPLES: 'true'
     AIRFLOW__API__AUTH_BACKENDS: 'airflow.api.auth.backend.basic_auth,airflow.api.auth.backend.session'
+    AIRFLOW__WEBSERVER__SECRET_KEY: '123'
     # yamllint disable rule:line-length
     # Use simple http server on scheduler for health checks
     # See https://airflow.apache.org/docs/apache-airflow/stable/administration-and-deployment/logging-monitoring/check-health.html#scheduler-health-check-server
@@ -30,7 +31,7 @@ x-airflow-common:
     - ${AIRFLOW_PROJ_DIR:-.}/dags:/opt/airflow/dags
     - ${AIRFLOW_PROJ_DIR:-.}/logs:/opt/airflow/logs
     #- ${AIRFLOW_PROJ_DIR:-.}/config:/opt/airflow/config
-    - ${AIRFLOW_PROJ_DIR:-.}/plugins:/opt/airflow/plugins
+    #- ${AIRFLOW_PROJ_DIR:-.}/plugins:/opt/airflow/plugins
   user: "${AIRFLOW_UID:-50000}:0"
   depends_on: &airflow-common-depends-on
     redis:
@@ -99,7 +100,7 @@ services:
     ports:
       - "8000:8000"
     volumes:
-      - jupyter_notebook_volume:/home/jovyan/
+      - jupyter_notebook_volume:/app/volume/
     networks:
       - shared_network
   redis:
@@ -122,6 +123,8 @@ services:
       - "8080:8080"
     networks:
       - shared_network
+    volumes:
+      - jupyter_notebook_volume:/opt/airflow/volume/
     healthcheck:
       test:
         [

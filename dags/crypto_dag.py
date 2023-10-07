@@ -15,9 +15,9 @@ from sklearn.compose import ColumnTransformer
 from sklearn.pipeline import Pipeline
 from sklearn.preprocessing import OneHotEncoder, StandardScaler
 import time
-import numpy as np
+#import numpy as np
 import joblib
-
+#import os
 
 default_args = {
     'owner': 'airflow',
@@ -283,27 +283,32 @@ def train_model(model_name, **kwargs):
     y_test = joblib.load(y_test_path)
     preprocessor = joblib.load(preprocessor_path)
 
-    if model_name == "Linear Regression":
+    if model_name == "Linear_Regression":
         model = LinearRegression()
-    elif model_name == "Random Forest":
+    elif model_name == "Random_Forest":
         model = RandomForestRegressor(n_estimators=100)
-    elif model_name == "Decision Tree":
+    elif model_name == "Decision_Tree":
         model = DecisionTreeRegressor()
     elif model_name == "XGBoost":
         model = XGBRegressor()
 
     pipeline = Pipeline(steps=[('preprocessor', preprocessor), ('model', model)])
-    pipeline.fit(X_train, y_train)
-    y_pred = pipeline.predict(X_test)
+    my_model = pipeline.fit(X_train, y_train)
+    y_pred = my_model.predict(X_test)
     rmse = mean_squared_error(y_test, y_pred, squared=False)
 
     # Save RMSE to XCom for the best_model task to use
     ti.xcom_push(key=f'rmse_{model_name}', value=rmse)
 
+    # Save the trained model
+    model_save_path = f'/opt/airflow/dags/{model_name}_model.pkl'
+    joblib.dump(my_model, model_save_path)
+    print("Model created and saved at:", model_save_path)
+
 linear_regression = PythonOperator(
     task_id='linear_regression',
     python_callable=train_model,
-    op_args=["Linear Regression"],
+    op_args=["Linear_Regression"],
     provide_context=True,
     dag=dag
 )
@@ -311,7 +316,7 @@ linear_regression = PythonOperator(
 random_forest = PythonOperator(
     task_id='random_forest',
     python_callable=train_model,
-    op_args=["Random Forest"],
+    op_args=["Random_Forest"],
     provide_context=True,
     dag=dag
 )
@@ -319,7 +324,7 @@ random_forest = PythonOperator(
 decision_tree = PythonOperator(
     task_id='decision_tree',
     python_callable=train_model,
-    op_args=["Decision Tree"],
+    op_args=["Decision_Tree"],
     provide_context=True,
     dag=dag
 )
@@ -358,9 +363,9 @@ def best_model_selection(**kwargs):
     ti = kwargs['ti']
 
     # Retrieve RMSE scores from XCom
-    rmse_linear_regression = ti.xcom_pull(task_ids='linear_regression', key='rmse_Linear Regression')
-    rmse_random_forest = ti.xcom_pull(task_ids='random_forest', key='rmse_Random Forest')
-    rmse_decision_tree = ti.xcom_pull(task_ids='decision_tree', key='rmse_Decision Tree')
+    rmse_linear_regression = ti.xcom_pull(task_ids='linear_regression', key='rmse_Linear_Regression')
+    rmse_random_forest = ti.xcom_pull(task_ids='random_forest', key='rmse_Random_Forest')
+    rmse_decision_tree = ti.xcom_pull(task_ids='decision_tree', key='rmse_Decision_Tree')
     rmse_xg_boost = ti.xcom_pull(task_ids='xg_boost', key='rmse_XGBoost')
 
     # Store RMSE scores in a dictionary

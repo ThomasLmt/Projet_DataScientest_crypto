@@ -1,11 +1,11 @@
 #!/bin/bash
 
 # Wait for the model to be available
-while [ ! -f /app/models/bot_api_model/data/_SUCCESS ]; do
+while [ ! -f /app/Random_Forest_model.pkl ]; do
   sleep 15
 done
 
-if [ -f /app/models/bot_api_model/data/_SUCCESS ]; then
+if [ -f /app/Random_Forest_model.pkl ]; then
   echo "File exists"
 else
   echo "File does not exist"

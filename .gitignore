@@ -2,3 +2,8 @@
 __pycache__/
 .DS_Store
 jupyter_notebook_volume/
+/dags/Decision_Tree_model.pkl
+/dags/Linear_Regression_model.pkl
+/dags/Random_Forest_model.pkl
+/dags/XGBoost_model.pkl
+/bot_api/Random_Forest_model.pkl

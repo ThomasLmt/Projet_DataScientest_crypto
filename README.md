@@ -30,10 +30,17 @@ chmod +x setup.sh
 ## Put the period in historical-data-engine.py
 python3 -u historical-data-engine.py > results/engine.txt
 
-# Use VM
+# Actions to do from Airflow
 
-- Access airflow:
+Access airflow:
 http://localhost:8080/
+
+Run the DAG btc_market_analysis to:
+- create & save machine learning models
+- select the best one
+
+Copy the best model to the bot api folder:
+cp dags/Random_Forest_model.pkl bot_api/
 
 - Access jupyter notebook:
 http://localhost:8888/

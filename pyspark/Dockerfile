@@ -3,7 +3,7 @@ FROM jupyter/pyspark-notebook
 USER root
 
 # Install pymongo and pyspark and mongo-spark-connector
-RUN pip install --no-cache-dir pyspark pymongo
+RUN pip install --no-cache-dir pyspark pymongo scikit-learn xgboost
 # RUN pip install --no-cache-dir mongo-spark-connector
 RUN wget -O /usr/local/spark/jars/mongo-spark-connector_2.12-3.0.2.jar \
   https://repo1.maven.org/maven2/org/mongodb/spark/mongo-spark-connector_2.12/3.0.2/mongo-spark-connector_2.12-3.0.2.jar
