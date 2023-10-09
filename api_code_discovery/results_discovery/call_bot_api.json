@@ -1,0 +1,56 @@
+27451.1816
+Buy BTC with USDT
+BTC: 1.01500000
+USDT: 9584.13482000
+Order placed successfully: {'symbol': 'BTCUSDT', 'orderId': 1969225, 'orderListId': -1, 'clientOrderId': '6HY9vtmvk1xdV89MQdZKEM', 'transactTime': 1696866465324, 'price': '28488.49000000', 'origQty': '0.00100000', 'executedQty': '0.00100000', 'cummulativeQuoteQty': '28.20643000', 'status': 'FILLED', 'timeInForce': 'GTC', 'type': 'LIMIT', 'side': 'BUY', 'workingTime': 1696866465324, 'fills': [
+    {'price': '28206.43000000', 'qty': '0.00100000', 'commission': '0.00000000', 'commissionAsset': 'BTC', 'tradeId': 340144
+    }
+  ], 'selfTradePreventionMode': 'NONE'
+}
+Our trades: [
+  {'symbol': 'BTCUSDT', 'id': 339393, 'orderId': 1967061, 'orderListId': -1, 'price': '27496.98000000', 'qty': '0.01000000', 'quoteQty': '274.96980000', 'commission': '0.00000000', 'commissionAsset': 'BTC', 'time': 1696863456261, 'isBuyer': True, 'isMaker': False, 'isBestMatch': True
+  },
+  {'symbol': 'BTCUSDT', 'id': 339686, 'orderId': 1967680, 'orderListId': -1, 'price': '28154.92000000', 'qty': '0.00100000', 'quoteQty': '28.15492000', 'commission': '0.00000000', 'commissionAsset': 'BTC', 'time': 1696864715164, 'isBuyer': True, 'isMaker': False, 'isBestMatch': True
+  },
+  {'symbol': 'BTCUSDT', 'id': 339758, 'orderId': 1967987, 'orderListId': -1, 'price': '28164.75000000', 'qty': '0.00100000', 'quoteQty': '28.16475000', 'commission': '0.00000000', 'commissionAsset': 'BTC', 'time': 1696865046771, 'isBuyer': True, 'isMaker': False, 'isBestMatch': True
+  },
+  {'symbol': 'BTCUSDT', 'id': 339759, 'orderId': 1967992, 'orderListId': -1, 'price': '28164.77000000', 'qty': '0.00100000', 'quoteQty': '28.16477000', 'commission': '0.00000000', 'commissionAsset': 'BTC', 'time': 1696865074556, 'isBuyer': True, 'isMaker': False, 'isBestMatch': True
+  },
+  {'symbol': 'BTCUSDT', 'id': 340114, 'orderId': 1969186, 'orderListId': -1, 'price': '28204.51000000', 'qty': '0.00100000', 'quoteQty': '28.20451000', 'commission': '0.00000000', 'commissionAsset': 'BTC', 'time': 1696866361108, 'isBuyer': True, 'isMaker': False, 'isBestMatch': True
+  },
+  {'symbol': 'BTCUSDT', 'id': 340134, 'orderId': 1969211, 'orderListId': -1, 'price': '28206.43000000', 'qty': '0.00100000', 'quoteQty': '28.20643000', 'commission': '0.00000000', 'commissionAsset': 'BTC', 'time': 1696866420744, 'isBuyer': True, 'isMaker': False, 'isBestMatch': True
+  },
+  {'symbol': 'BTCUSDT', 'id': 340144, 'orderId': 1969225, 'orderListId': -1, 'price': '28206.43000000', 'qty': '0.00100000', 'quoteQty': '28.20643000', 'commission': '0.00000000', 'commissionAsset': 'BTC', 'time': 1696866465324, 'isBuyer': True, 'isMaker': False, 'isBestMatch': True
+  }
+]
+BTC: 1.01500000
+USDT: 9584.13482000
+27451.1816
+Buy BTC with USDT
+BTC: 1.01600000
+USDT: 9555.92839000
+Order placed successfully: {'symbol': 'BTCUSDT', 'orderId': 1969238, 'orderListId': -1, 'clientOrderId': 'PGywap6vZiGKImxUsCvQcy', 'transactTime': 1696866491399, 'price': '28491.12000000', 'origQty': '0.00100000', 'executedQty': '0.00100000', 'cummulativeQuoteQty': '28.21033000', 'status': 'FILLED', 'timeInForce': 'GTC', 'type': 'LIMIT', 'side': 'BUY', 'workingTime': 1696866491399, 'fills': [
+    {'price': '28210.33000000', 'qty': '0.00100000', 'commission': '0.00000000', 'commissionAsset': 'BTC', 'tradeId': 340154
+    }
+  ], 'selfTradePreventionMode': 'NONE'
+}
+Our trades: [
+  {'symbol': 'BTCUSDT', 'id': 339393, 'orderId': 1967061, 'orderListId': -1, 'price': '27496.98000000', 'qty': '0.01000000', 'quoteQty': '274.96980000', 'commission': '0.00000000', 'commissionAsset': 'BTC', 'time': 1696863456261, 'isBuyer': True, 'isMaker': False, 'isBestMatch': True
+  },
+  {'symbol': 'BTCUSDT', 'id': 339686, 'orderId': 1967680, 'orderListId': -1, 'price': '28154.92000000', 'qty': '0.00100000', 'quoteQty': '28.15492000', 'commission': '0.00000000', 'commissionAsset': 'BTC', 'time': 1696864715164, 'isBuyer': True, 'isMaker': False, 'isBestMatch': True
+  },
+  {'symbol': 'BTCUSDT', 'id': 339758, 'orderId': 1967987, 'orderListId': -1, 'price': '28164.75000000', 'qty': '0.00100000', 'quoteQty': '28.16475000', 'commission': '0.00000000', 'commissionAsset': 'BTC', 'time': 1696865046771, 'isBuyer': True, 'isMaker': False, 'isBestMatch': True
+  },
+  {'symbol': 'BTCUSDT', 'id': 339759, 'orderId': 1967992, 'orderListId': -1, 'price': '28164.77000000', 'qty': '0.00100000', 'quoteQty': '28.16477000', 'commission': '0.00000000', 'commissionAsset': 'BTC', 'time': 1696865074556, 'isBuyer': True, 'isMaker': False, 'isBestMatch': True
+  },
+  {'symbol': 'BTCUSDT', 'id': 340114, 'orderId': 1969186, 'orderListId': -1, 'price': '28204.51000000', 'qty': '0.00100000', 'quoteQty': '28.20451000', 'commission': '0.00000000', 'commissionAsset': 'BTC', 'time': 1696866361108, 'isBuyer': True, 'isMaker': False, 'isBestMatch': True
+  },
+  {'symbol': 'BTCUSDT', 'id': 340134, 'orderId': 1969211, 'orderListId': -1, 'price': '28206.43000000', 'qty': '0.00100000', 'quoteQty': '28.20643000', 'commission': '0.00000000', 'commissionAsset': 'BTC', 'time': 1696866420744, 'isBuyer': True, 'isMaker': False, 'isBestMatch': True
+  },
+  {'symbol': 'BTCUSDT', 'id': 340144, 'orderId': 1969225, 'orderListId': -1, 'price': '28206.43000000', 'qty': '0.00100000', 'quoteQty': '28.20643000', 'commission': '0.00000000', 'commissionAsset': 'BTC', 'time': 1696866465324, 'isBuyer': True, 'isMaker': False, 'isBestMatch': True
+  },
+  {'symbol': 'BTCUSDT', 'id': 340154, 'orderId': 1969238, 'orderListId': -1, 'price': '28210.33000000', 'qty': '0.00100000', 'quoteQty': '28.21033000', 'commission': '0.00000000', 'commissionAsset': 'BTC', 'time': 1696866491399, 'isBuyer': True, 'isMaker': False, 'isBestMatch': True
+  }
+]
+BTC: 1.01600000
+USDT: 9555.92839000

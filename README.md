@@ -1,3 +1,6 @@
+# Create you api access on the testnet binance
+https://testnet.binance.vision
+
 # Set up VM
 
 ## Packages
@@ -5,6 +8,9 @@ pip install pandas<br>
 pip install matplotlib<br>
 pip install pymongo<br>
 pip install python-dotenv<br>
+pip install psycopg2-binary<br>
+pip install nest_asyncio<br>
+pip install python-binance<br>
 
 ## Copy the folder Bot_binance on the VM
 - Drag & drop the folder using Visual Studio
@@ -18,6 +24,9 @@ MONGO_USER=userAdmin<br>
 MONGO_PWD=userPassword<br>
 POSTGRES_USER=useradmin<br>
 POSTGRES_PASSWORD=userpassword<br>
+BTCUSDT_LIMIT= 28000<br>
+API_KEY_TESTNET=REPLACE_BY_YOUR_KEY<br>
+API_SECRET_TESTNET=REPLACE_BY_YOUR_SECRET<br>
 - Generate from the terminal those used by airflow<br>
 echo -e "AIRFLOW_UID=$(id -u)\nAIRFLOW_GID=0" >> .env
 
