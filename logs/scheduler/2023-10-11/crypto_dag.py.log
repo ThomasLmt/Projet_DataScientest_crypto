@@ -437,3 +437,17 @@
 [2023-10-11T07:49:51.590+0000] {logging_mixin.py:151} INFO - [2023-10-11T07:49:51.590+0000] {dag.py:2915} INFO - Sync 1 DAGs
 [2023-10-11T07:49:51.596+0000] {logging_mixin.py:151} INFO - [2023-10-11T07:49:51.596+0000] {dag.py:3696} INFO - Setting next_dagrun for btc_market_analysis to None, run_after=None
 [2023-10-11T07:49:51.606+0000] {processor.py:179} INFO - Processing /opt/airflow/dags/crypto_dag.py took 0.540 seconds
+[2023-10-11T07:50:22.408+0000] {processor.py:157} INFO - Started process (PID=1564) to work on /opt/airflow/dags/crypto_dag.py
+[2023-10-11T07:50:22.409+0000] {processor.py:829} INFO - Processing file /opt/airflow/dags/crypto_dag.py for tasks to queue
+[2023-10-11T07:50:22.411+0000] {logging_mixin.py:151} INFO - [2023-10-11T07:50:22.411+0000] {dagbag.py:539} INFO - Filling up the DagBag from /opt/airflow/dags/crypto_dag.py
+[2023-10-11T07:50:22.939+0000] {processor.py:839} INFO - DAG(s) dict_keys(['btc_market_analysis']) retrieved from /opt/airflow/dags/crypto_dag.py
+[2023-10-11T07:50:22.954+0000] {logging_mixin.py:151} INFO - [2023-10-11T07:50:22.953+0000] {dag.py:2915} INFO - Sync 1 DAGs
+[2023-10-11T07:50:22.961+0000] {logging_mixin.py:151} INFO - [2023-10-11T07:50:22.961+0000] {dag.py:3696} INFO - Setting next_dagrun for btc_market_analysis to None, run_after=None
+[2023-10-11T07:50:22.971+0000] {processor.py:179} INFO - Processing /opt/airflow/dags/crypto_dag.py took 0.567 seconds
+[2023-10-11T07:50:53.639+0000] {processor.py:157} INFO - Started process (PID=1623) to work on /opt/airflow/dags/crypto_dag.py
+[2023-10-11T07:50:53.640+0000] {processor.py:829} INFO - Processing file /opt/airflow/dags/crypto_dag.py for tasks to queue
+[2023-10-11T07:50:53.642+0000] {logging_mixin.py:151} INFO - [2023-10-11T07:50:53.642+0000] {dagbag.py:539} INFO - Filling up the DagBag from /opt/airflow/dags/crypto_dag.py
+[2023-10-11T07:50:54.175+0000] {processor.py:839} INFO - DAG(s) dict_keys(['btc_market_analysis']) retrieved from /opt/airflow/dags/crypto_dag.py
+[2023-10-11T07:50:54.190+0000] {logging_mixin.py:151} INFO - [2023-10-11T07:50:54.190+0000] {dag.py:2915} INFO - Sync 1 DAGs
+[2023-10-11T07:50:54.197+0000] {logging_mixin.py:151} INFO - [2023-10-11T07:50:54.197+0000] {dag.py:3696} INFO - Setting next_dagrun for btc_market_analysis to None, run_after=None
+[2023-10-11T07:50:54.207+0000] {processor.py:179} INFO - Processing /opt/airflow/dags/crypto_dag.py took 0.571 seconds
