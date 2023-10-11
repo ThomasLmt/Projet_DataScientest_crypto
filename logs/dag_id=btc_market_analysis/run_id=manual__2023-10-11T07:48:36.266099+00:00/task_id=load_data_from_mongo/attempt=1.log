@@ -1,0 +1,13 @@
+[2023-10-11T07:48:38.399+0000] {taskinstance.py:1157} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: btc_market_analysis.load_data_from_mongo manual__2023-10-11T07:48:36.266099+00:00 [queued]>
+[2023-10-11T07:48:38.404+0000] {taskinstance.py:1157} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: btc_market_analysis.load_data_from_mongo manual__2023-10-11T07:48:36.266099+00:00 [queued]>
+[2023-10-11T07:48:38.404+0000] {taskinstance.py:1359} INFO - Starting attempt 1 of 2
+[2023-10-11T07:48:38.411+0000] {taskinstance.py:1380} INFO - Executing <Task(PythonOperator): load_data_from_mongo> on 2023-10-11 07:48:36.266099+00:00
+[2023-10-11T07:48:38.417+0000] {standard_task_runner.py:57} INFO - Started process 227 to run task
+[2023-10-11T07:48:38.420+0000] {standard_task_runner.py:84} INFO - Running: ['airflow', 'tasks', 'run', 'btc_market_analysis', 'load_data_from_mongo', 'manual__2023-10-11T07:48:36.266099+00:00', '--job-id', '3', '--raw', '--subdir', 'DAGS_FOLDER/crypto_dag.py', '--cfg-path', '/tmp/tmpqxhi35bw']
+[2023-10-11T07:48:38.421+0000] {standard_task_runner.py:85} INFO - Job 3: Subtask load_data_from_mongo
+[2023-10-11T07:48:38.476+0000] {task_command.py:415} INFO - Running <TaskInstance: btc_market_analysis.load_data_from_mongo manual__2023-10-11T07:48:36.266099+00:00 [running]> on host e41a25db3f85
+[2023-10-11T07:48:38.537+0000] {taskinstance.py:1660} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='airflow' AIRFLOW_CTX_DAG_ID='btc_market_analysis' AIRFLOW_CTX_TASK_ID='load_data_from_mongo' AIRFLOW_CTX_EXECUTION_DATE='2023-10-11T07:48:36.266099+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2023-10-11T07:48:36.266099+00:00'
+[2023-10-11T07:48:51.625+0000] {python.py:194} INFO - Done. Returned value was: /tmp/btc_data.parquet
+[2023-10-11T07:48:51.652+0000] {taskinstance.py:1398} INFO - Marking task as SUCCESS. dag_id=btc_market_analysis, task_id=load_data_from_mongo, execution_date=20231011T074836, start_date=20231011T074838, end_date=20231011T074851
+[2023-10-11T07:48:51.694+0000] {local_task_job_runner.py:228} INFO - Task exited with return code 0
+[2023-10-11T07:48:51.715+0000] {taskinstance.py:2776} INFO - 1 downstream tasks scheduled from follow-on schedule check

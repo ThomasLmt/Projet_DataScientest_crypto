@@ -1,0 +1,100 @@
+[2023-10-11T07:34:51.813+0000] {taskinstance.py:1157} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: btc_market_analysis.preprocess_data manual__2023-10-11T07:29:10.614068+00:00 [queued]>
+[2023-10-11T07:34:51.817+0000] {taskinstance.py:1157} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: btc_market_analysis.preprocess_data manual__2023-10-11T07:29:10.614068+00:00 [queued]>
+[2023-10-11T07:34:51.817+0000] {taskinstance.py:1359} INFO - Starting attempt 2 of 2
+[2023-10-11T07:34:51.823+0000] {taskinstance.py:1380} INFO - Executing <Task(PythonOperator): preprocess_data> on 2023-10-11 07:29:10.614068+00:00
+[2023-10-11T07:34:51.828+0000] {standard_task_runner.py:57} INFO - Started process 797 to run task
+[2023-10-11T07:34:51.831+0000] {standard_task_runner.py:84} INFO - Running: ['airflow', 'tasks', 'run', 'btc_market_analysis', 'preprocess_data', 'manual__2023-10-11T07:29:10.614068+00:00', '--job-id', '113', '--raw', '--subdir', 'DAGS_FOLDER/crypto_dag.py', '--cfg-path', '/tmp/tmp5sxnss7_']
+[2023-10-11T07:34:51.832+0000] {standard_task_runner.py:85} INFO - Job 113: Subtask preprocess_data
+[2023-10-11T07:34:51.870+0000] {task_command.py:415} INFO - Running <TaskInstance: btc_market_analysis.preprocess_data manual__2023-10-11T07:29:10.614068+00:00 [running]> on host fe1f2c5b2445
+[2023-10-11T07:34:51.941+0000] {taskinstance.py:1660} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='airflow' AIRFLOW_CTX_DAG_ID='btc_market_analysis' AIRFLOW_CTX_TASK_ID='preprocess_data' AIRFLOW_CTX_EXECUTION_DATE='2023-10-11T07:29:10.614068+00:00' AIRFLOW_CTX_TRY_NUMBER='2' AIRFLOW_CTX_DAG_RUN_ID='manual__2023-10-11T07:29:10.614068+00:00'
+[2023-10-11T07:35:04.530+0000] {taskinstance.py:1935} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/operators/python.py", line 192, in execute
+    return_value = self.execute_callable()
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/operators/python.py", line 209, in execute_callable
+    return self.python_callable(*self.op_args, **self.op_kwargs)
+  File "/opt/airflow/dags/crypto_dag.py", line 161, in preprocess_data
+    df_pd = df_ml.toPandas()
+  File "/home/airflow/.local/lib/python3.8/site-packages/pyspark/sql/pandas/conversion.py", line 202, in toPandas
+    rows = self.collect()
+  File "/home/airflow/.local/lib/python3.8/site-packages/pyspark/sql/dataframe.py", line 1257, in collect
+    sock_info = self._jdf.collectToPython()
+  File "/home/airflow/.local/lib/python3.8/site-packages/py4j/java_gateway.py", line 1322, in __call__
+    return_value = get_return_value(
+  File "/home/airflow/.local/lib/python3.8/site-packages/pyspark/errors/exceptions/captured.py", line 179, in deco
+    return f(*a, **kw)
+  File "/home/airflow/.local/lib/python3.8/site-packages/py4j/protocol.py", line 326, in get_return_value
+    raise Py4JJavaError(
+py4j.protocol.Py4JJavaError: An error occurred while calling o190.collectToPython.
+: java.lang.OutOfMemoryError: Java heap space
+	at org.apache.spark.sql.execution.SparkPlan$$anon$1._next(SparkPlan.scala:415)
+	at org.apache.spark.sql.execution.SparkPlan$$anon$1.getNext(SparkPlan.scala:426)
+	at org.apache.spark.sql.execution.SparkPlan$$anon$1.getNext(SparkPlan.scala:412)
+	at org.apache.spark.util.NextIterator.hasNext(NextIterator.scala:73)
+	at scala.collection.Iterator.foreach(Iterator.scala:943)
+	at scala.collection.Iterator.foreach$(Iterator.scala:943)
+	at org.apache.spark.util.NextIterator.foreach(NextIterator.scala:21)
+	at org.apache.spark.sql.execution.SparkPlan.$anonfun$executeCollect$1(SparkPlan.scala:449)
+	at org.apache.spark.sql.execution.SparkPlan.$anonfun$executeCollect$1$adapted(SparkPlan.scala:448)
+	at org.apache.spark.sql.execution.SparkPlan$$Lambda$3583/0x000000010153f840.apply(Unknown Source)
+	at scala.collection.IndexedSeqOptimized.foreach(IndexedSeqOptimized.scala:36)
+	at scala.collection.IndexedSeqOptimized.foreach$(IndexedSeqOptimized.scala:33)
+	at scala.collection.mutable.ArrayOps$ofRef.foreach(ArrayOps.scala:198)
+	at org.apache.spark.sql.execution.SparkPlan.executeCollect(SparkPlan.scala:448)
+	at org.apache.spark.sql.execution.adaptive.AdaptiveSparkPlanExec.$anonfun$executeCollect$1(AdaptiveSparkPlanExec.scala:374)
+	at org.apache.spark.sql.execution.adaptive.AdaptiveSparkPlanExec$$Lambda$2827/0x00000001011cb040.apply(Unknown Source)
+	at org.apache.spark.sql.execution.adaptive.AdaptiveSparkPlanExec.withFinalPlanUpdate(AdaptiveSparkPlanExec.scala:402)
+	at org.apache.spark.sql.execution.adaptive.AdaptiveSparkPlanExec.executeCollect(AdaptiveSparkPlanExec.scala:374)
+	at org.apache.spark.sql.Dataset.$anonfun$collectToPython$1(Dataset.scala:4160)
+	at org.apache.spark.sql.Dataset$$Lambda$2249/0x0000000100f8a040.apply(Unknown Source)
+	at org.apache.spark.sql.Dataset.$anonfun$withAction$2(Dataset.scala:4334)
+	at org.apache.spark.sql.Dataset$$Lambda$2821/0x00000001011c6440.apply(Unknown Source)
+	at org.apache.spark.sql.execution.QueryExecution$.withInternalError(QueryExecution.scala:546)
+	at org.apache.spark.sql.Dataset.$anonfun$withAction$1(Dataset.scala:4332)
+	at org.apache.spark.sql.Dataset$$Lambda$2250/0x0000000100f8a840.apply(Unknown Source)
+	at org.apache.spark.sql.execution.SQLExecution$.$anonfun$withNewExecutionId$6(SQLExecution.scala:125)
+	at org.apache.spark.sql.execution.SQLExecution$$$Lambda$2258/0x0000000100f8f440.apply(Unknown Source)
+	at org.apache.spark.sql.execution.SQLExecution$.withSQLConfPropagated(SQLExecution.scala:201)
+	at org.apache.spark.sql.execution.SQLExecution$.$anonfun$withNewExecutionId$1(SQLExecution.scala:108)
+	at org.apache.spark.sql.execution.SQLExecution$$$Lambda$2251/0x0000000100f8ac40.apply(Unknown Source)
+	at org.apache.spark.sql.SparkSession.withActive(SparkSession.scala:900)
+	at org.apache.spark.sql.execution.SQLExecution$.withNewExecutionId(SQLExecution.scala:66)
+
+[2023-10-11T07:35:04.551+0000] {taskinstance.py:1398} INFO - Marking task as FAILED. dag_id=btc_market_analysis, task_id=preprocess_data, execution_date=20231011T072910, start_date=20231011T073451, end_date=20231011T073504
+[2023-10-11T07:35:04.563+0000] {standard_task_runner.py:104} ERROR - Failed to execute job 113 for task preprocess_data (An error occurred while calling o190.collectToPython.
+: java.lang.OutOfMemoryError: Java heap space
+	at org.apache.spark.sql.execution.SparkPlan$$anon$1._next(SparkPlan.scala:415)
+	at org.apache.spark.sql.execution.SparkPlan$$anon$1.getNext(SparkPlan.scala:426)
+	at org.apache.spark.sql.execution.SparkPlan$$anon$1.getNext(SparkPlan.scala:412)
+	at org.apache.spark.util.NextIterator.hasNext(NextIterator.scala:73)
+	at scala.collection.Iterator.foreach(Iterator.scala:943)
+	at scala.collection.Iterator.foreach$(Iterator.scala:943)
+	at org.apache.spark.util.NextIterator.foreach(NextIterator.scala:21)
+	at org.apache.spark.sql.execution.SparkPlan.$anonfun$executeCollect$1(SparkPlan.scala:449)
+	at org.apache.spark.sql.execution.SparkPlan.$anonfun$executeCollect$1$adapted(SparkPlan.scala:448)
+	at org.apache.spark.sql.execution.SparkPlan$$Lambda$3583/0x000000010153f840.apply(Unknown Source)
+	at scala.collection.IndexedSeqOptimized.foreach(IndexedSeqOptimized.scala:36)
+	at scala.collection.IndexedSeqOptimized.foreach$(IndexedSeqOptimized.scala:33)
+	at scala.collection.mutable.ArrayOps$ofRef.foreach(ArrayOps.scala:198)
+	at org.apache.spark.sql.execution.SparkPlan.executeCollect(SparkPlan.scala:448)
+	at org.apache.spark.sql.execution.adaptive.AdaptiveSparkPlanExec.$anonfun$executeCollect$1(AdaptiveSparkPlanExec.scala:374)
+	at org.apache.spark.sql.execution.adaptive.AdaptiveSparkPlanExec$$Lambda$2827/0x00000001011cb040.apply(Unknown Source)
+	at org.apache.spark.sql.execution.adaptive.AdaptiveSparkPlanExec.withFinalPlanUpdate(AdaptiveSparkPlanExec.scala:402)
+	at org.apache.spark.sql.execution.adaptive.AdaptiveSparkPlanExec.executeCollect(AdaptiveSparkPlanExec.scala:374)
+	at org.apache.spark.sql.Dataset.$anonfun$collectToPython$1(Dataset.scala:4160)
+	at org.apache.spark.sql.Dataset$$Lambda$2249/0x0000000100f8a040.apply(Unknown Source)
+	at org.apache.spark.sql.Dataset.$anonfun$withAction$2(Dataset.scala:4334)
+	at org.apache.spark.sql.Dataset$$Lambda$2821/0x00000001011c6440.apply(Unknown Source)
+	at org.apache.spark.sql.execution.QueryExecution$.withInternalError(QueryExecution.scala:546)
+	at org.apache.spark.sql.Dataset.$anonfun$withAction$1(Dataset.scala:4332)
+	at org.apache.spark.sql.Dataset$$Lambda$2250/0x0000000100f8a840.apply(Unknown Source)
+	at org.apache.spark.sql.execution.SQLExecution$.$anonfun$withNewExecutionId$6(SQLExecution.scala:125)
+	at org.apache.spark.sql.execution.SQLExecution$$$Lambda$2258/0x0000000100f8f440.apply(Unknown Source)
+	at org.apache.spark.sql.execution.SQLExecution$.withSQLConfPropagated(SQLExecution.scala:201)
+	at org.apache.spark.sql.execution.SQLExecution$.$anonfun$withNewExecutionId$1(SQLExecution.scala:108)
+	at org.apache.spark.sql.execution.SQLExecution$$$Lambda$2251/0x0000000100f8ac40.apply(Unknown Source)
+	at org.apache.spark.sql.SparkSession.withActive(SparkSession.scala:900)
+	at org.apache.spark.sql.execution.SQLExecution$.withNewExecutionId(SQLExecution.scala:66)
+; 797)
+[2023-10-11T07:35:04.593+0000] {local_task_job_runner.py:228} INFO - Task exited with return code 1
+[2023-10-11T07:35:04.622+0000] {taskinstance.py:2776} INFO - 0 downstream tasks scheduled from follow-on schedule check

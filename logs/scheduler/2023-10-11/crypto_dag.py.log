@@ -201,3 +201,239 @@
 [2023-10-11T07:31:47.650+0000] {logging_mixin.py:151} INFO - [2023-10-11T07:31:47.649+0000] {dag.py:2915} INFO - Sync 1 DAGs
 [2023-10-11T07:31:47.656+0000] {logging_mixin.py:151} INFO - [2023-10-11T07:31:47.656+0000] {dag.py:3696} INFO - Setting next_dagrun for btc_market_analysis to None, run_after=None
 [2023-10-11T07:31:47.664+0000] {processor.py:179} INFO - Processing /opt/airflow/dags/crypto_dag.py took 0.532 seconds
+[2023-10-11T07:32:18.268+0000] {processor.py:157} INFO - Started process (PID=1793) to work on /opt/airflow/dags/crypto_dag.py
+[2023-10-11T07:32:18.269+0000] {processor.py:829} INFO - Processing file /opt/airflow/dags/crypto_dag.py for tasks to queue
+[2023-10-11T07:32:18.272+0000] {logging_mixin.py:151} INFO - [2023-10-11T07:32:18.271+0000] {dagbag.py:539} INFO - Filling up the DagBag from /opt/airflow/dags/crypto_dag.py
+[2023-10-11T07:32:18.740+0000] {processor.py:839} INFO - DAG(s) dict_keys(['btc_market_analysis']) retrieved from /opt/airflow/dags/crypto_dag.py
+[2023-10-11T07:32:18.755+0000] {logging_mixin.py:151} INFO - [2023-10-11T07:32:18.755+0000] {dag.py:2915} INFO - Sync 1 DAGs
+[2023-10-11T07:32:18.761+0000] {logging_mixin.py:151} INFO - [2023-10-11T07:32:18.761+0000] {dag.py:3696} INFO - Setting next_dagrun for btc_market_analysis to None, run_after=None
+[2023-10-11T07:32:18.770+0000] {processor.py:179} INFO - Processing /opt/airflow/dags/crypto_dag.py took 0.506 seconds
+[2023-10-11T07:32:49.458+0000] {processor.py:157} INFO - Started process (PID=1852) to work on /opt/airflow/dags/crypto_dag.py
+[2023-10-11T07:32:49.459+0000] {processor.py:829} INFO - Processing file /opt/airflow/dags/crypto_dag.py for tasks to queue
+[2023-10-11T07:32:49.460+0000] {logging_mixin.py:151} INFO - [2023-10-11T07:32:49.460+0000] {dagbag.py:539} INFO - Filling up the DagBag from /opt/airflow/dags/crypto_dag.py
+[2023-10-11T07:32:49.947+0000] {processor.py:839} INFO - DAG(s) dict_keys(['btc_market_analysis']) retrieved from /opt/airflow/dags/crypto_dag.py
+[2023-10-11T07:32:49.962+0000] {logging_mixin.py:151} INFO - [2023-10-11T07:32:49.961+0000] {dag.py:2915} INFO - Sync 1 DAGs
+[2023-10-11T07:32:49.968+0000] {logging_mixin.py:151} INFO - [2023-10-11T07:32:49.968+0000] {dag.py:3696} INFO - Setting next_dagrun for btc_market_analysis to None, run_after=None
+[2023-10-11T07:32:49.976+0000] {processor.py:179} INFO - Processing /opt/airflow/dags/crypto_dag.py took 0.520 seconds
+[2023-10-11T07:33:20.726+0000] {processor.py:157} INFO - Started process (PID=1912) to work on /opt/airflow/dags/crypto_dag.py
+[2023-10-11T07:33:20.727+0000] {processor.py:829} INFO - Processing file /opt/airflow/dags/crypto_dag.py for tasks to queue
+[2023-10-11T07:33:20.729+0000] {logging_mixin.py:151} INFO - [2023-10-11T07:33:20.729+0000] {dagbag.py:539} INFO - Filling up the DagBag from /opt/airflow/dags/crypto_dag.py
+[2023-10-11T07:33:21.405+0000] {processor.py:839} INFO - DAG(s) dict_keys(['btc_market_analysis']) retrieved from /opt/airflow/dags/crypto_dag.py
+[2023-10-11T07:33:21.433+0000] {logging_mixin.py:151} INFO - [2023-10-11T07:33:21.433+0000] {dag.py:2915} INFO - Sync 1 DAGs
+[2023-10-11T07:33:21.448+0000] {logging_mixin.py:151} INFO - [2023-10-11T07:33:21.448+0000] {dag.py:3696} INFO - Setting next_dagrun for btc_market_analysis to None, run_after=None
+[2023-10-11T07:33:21.471+0000] {processor.py:179} INFO - Processing /opt/airflow/dags/crypto_dag.py took 0.748 seconds
+[2023-10-11T07:33:52.090+0000] {processor.py:157} INFO - Started process (PID=1971) to work on /opt/airflow/dags/crypto_dag.py
+[2023-10-11T07:33:52.091+0000] {processor.py:829} INFO - Processing file /opt/airflow/dags/crypto_dag.py for tasks to queue
+[2023-10-11T07:33:52.092+0000] {logging_mixin.py:151} INFO - [2023-10-11T07:33:52.092+0000] {dagbag.py:539} INFO - Filling up the DagBag from /opt/airflow/dags/crypto_dag.py
+[2023-10-11T07:33:52.581+0000] {processor.py:839} INFO - DAG(s) dict_keys(['btc_market_analysis']) retrieved from /opt/airflow/dags/crypto_dag.py
+[2023-10-11T07:33:52.595+0000] {logging_mixin.py:151} INFO - [2023-10-11T07:33:52.595+0000] {dag.py:2915} INFO - Sync 1 DAGs
+[2023-10-11T07:33:52.602+0000] {logging_mixin.py:151} INFO - [2023-10-11T07:33:52.602+0000] {dag.py:3696} INFO - Setting next_dagrun for btc_market_analysis to None, run_after=None
+[2023-10-11T07:33:52.610+0000] {processor.py:179} INFO - Processing /opt/airflow/dags/crypto_dag.py took 0.523 seconds
+[2023-10-11T07:34:23.234+0000] {processor.py:157} INFO - Started process (PID=2030) to work on /opt/airflow/dags/crypto_dag.py
+[2023-10-11T07:34:23.236+0000] {processor.py:829} INFO - Processing file /opt/airflow/dags/crypto_dag.py for tasks to queue
+[2023-10-11T07:34:23.239+0000] {logging_mixin.py:151} INFO - [2023-10-11T07:34:23.239+0000] {dagbag.py:539} INFO - Filling up the DagBag from /opt/airflow/dags/crypto_dag.py
+[2023-10-11T07:34:23.738+0000] {processor.py:839} INFO - DAG(s) dict_keys(['btc_market_analysis']) retrieved from /opt/airflow/dags/crypto_dag.py
+[2023-10-11T07:34:23.753+0000] {logging_mixin.py:151} INFO - [2023-10-11T07:34:23.752+0000] {dag.py:2915} INFO - Sync 1 DAGs
+[2023-10-11T07:34:23.760+0000] {logging_mixin.py:151} INFO - [2023-10-11T07:34:23.759+0000] {dag.py:3696} INFO - Setting next_dagrun for btc_market_analysis to None, run_after=None
+[2023-10-11T07:34:23.769+0000] {processor.py:179} INFO - Processing /opt/airflow/dags/crypto_dag.py took 0.539 seconds
+[2023-10-11T07:34:54.345+0000] {processor.py:157} INFO - Started process (PID=2089) to work on /opt/airflow/dags/crypto_dag.py
+[2023-10-11T07:34:54.346+0000] {processor.py:829} INFO - Processing file /opt/airflow/dags/crypto_dag.py for tasks to queue
+[2023-10-11T07:34:54.348+0000] {logging_mixin.py:151} INFO - [2023-10-11T07:34:54.348+0000] {dagbag.py:539} INFO - Filling up the DagBag from /opt/airflow/dags/crypto_dag.py
+[2023-10-11T07:34:55.060+0000] {processor.py:839} INFO - DAG(s) dict_keys(['btc_market_analysis']) retrieved from /opt/airflow/dags/crypto_dag.py
+[2023-10-11T07:34:55.077+0000] {logging_mixin.py:151} INFO - [2023-10-11T07:34:55.077+0000] {dag.py:2915} INFO - Sync 1 DAGs
+[2023-10-11T07:34:55.085+0000] {logging_mixin.py:151} INFO - [2023-10-11T07:34:55.085+0000] {dag.py:3696} INFO - Setting next_dagrun for btc_market_analysis to None, run_after=None
+[2023-10-11T07:34:55.098+0000] {processor.py:179} INFO - Processing /opt/airflow/dags/crypto_dag.py took 0.756 seconds
+[2023-10-11T07:35:25.745+0000] {processor.py:157} INFO - Started process (PID=2148) to work on /opt/airflow/dags/crypto_dag.py
+[2023-10-11T07:35:25.747+0000] {processor.py:829} INFO - Processing file /opt/airflow/dags/crypto_dag.py for tasks to queue
+[2023-10-11T07:35:25.750+0000] {logging_mixin.py:151} INFO - [2023-10-11T07:35:25.749+0000] {dagbag.py:539} INFO - Filling up the DagBag from /opt/airflow/dags/crypto_dag.py
+[2023-10-11T07:35:26.282+0000] {processor.py:839} INFO - DAG(s) dict_keys(['btc_market_analysis']) retrieved from /opt/airflow/dags/crypto_dag.py
+[2023-10-11T07:35:26.297+0000] {logging_mixin.py:151} INFO - [2023-10-11T07:35:26.297+0000] {dag.py:2915} INFO - Sync 1 DAGs
+[2023-10-11T07:35:26.304+0000] {logging_mixin.py:151} INFO - [2023-10-11T07:35:26.303+0000] {dag.py:3696} INFO - Setting next_dagrun for btc_market_analysis to None, run_after=None
+[2023-10-11T07:35:26.312+0000] {processor.py:179} INFO - Processing /opt/airflow/dags/crypto_dag.py took 0.572 seconds
+[2023-10-11T07:35:57.131+0000] {processor.py:157} INFO - Started process (PID=2207) to work on /opt/airflow/dags/crypto_dag.py
+[2023-10-11T07:35:57.132+0000] {processor.py:829} INFO - Processing file /opt/airflow/dags/crypto_dag.py for tasks to queue
+[2023-10-11T07:35:57.135+0000] {logging_mixin.py:151} INFO - [2023-10-11T07:35:57.134+0000] {dagbag.py:539} INFO - Filling up the DagBag from /opt/airflow/dags/crypto_dag.py
+[2023-10-11T07:35:57.651+0000] {processor.py:839} INFO - DAG(s) dict_keys(['btc_market_analysis']) retrieved from /opt/airflow/dags/crypto_dag.py
+[2023-10-11T07:35:57.668+0000] {logging_mixin.py:151} INFO - [2023-10-11T07:35:57.668+0000] {dag.py:2915} INFO - Sync 1 DAGs
+[2023-10-11T07:35:57.674+0000] {logging_mixin.py:151} INFO - [2023-10-11T07:35:57.674+0000] {dag.py:3696} INFO - Setting next_dagrun for btc_market_analysis to None, run_after=None
+[2023-10-11T07:35:57.685+0000] {processor.py:179} INFO - Processing /opt/airflow/dags/crypto_dag.py took 0.559 seconds
+[2023-10-11T07:37:24.030+0000] {processor.py:157} INFO - Started process (PID=31) to work on /opt/airflow/dags/crypto_dag.py
+[2023-10-11T07:37:24.042+0000] {processor.py:829} INFO - Processing file /opt/airflow/dags/crypto_dag.py for tasks to queue
+[2023-10-11T07:37:24.047+0000] {logging_mixin.py:151} INFO - [2023-10-11T07:37:24.046+0000] {dagbag.py:539} INFO - Filling up the DagBag from /opt/airflow/dags/crypto_dag.py
+[2023-10-11T07:37:26.881+0000] {processor.py:839} INFO - DAG(s) dict_keys(['btc_market_analysis']) retrieved from /opt/airflow/dags/crypto_dag.py
+[2023-10-11T07:37:26.973+0000] {logging_mixin.py:151} INFO - [2023-10-11T07:37:26.973+0000] {manager.py:499} INFO - Created Permission View: %s
+[2023-10-11T07:37:26.984+0000] {logging_mixin.py:151} INFO - [2023-10-11T07:37:26.983+0000] {manager.py:499} INFO - Created Permission View: %s
+[2023-10-11T07:37:26.992+0000] {logging_mixin.py:151} INFO - [2023-10-11T07:37:26.991+0000] {manager.py:499} INFO - Created Permission View: %s
+[2023-10-11T07:37:26.993+0000] {logging_mixin.py:151} INFO - [2023-10-11T07:37:26.992+0000] {security.py:708} INFO - Not syncing DAG-level permissions for DAG 'DAG:btc_market_analysis' as access control is unset.
+[2023-10-11T07:37:26.994+0000] {logging_mixin.py:151} INFO - [2023-10-11T07:37:26.993+0000] {dag.py:2915} INFO - Sync 1 DAGs
+[2023-10-11T07:37:27.004+0000] {logging_mixin.py:151} INFO - [2023-10-11T07:37:27.004+0000] {dag.py:2937} INFO - Creating ORM DAG for btc_market_analysis
+[2023-10-11T07:37:27.005+0000] {logging_mixin.py:151} INFO - [2023-10-11T07:37:27.005+0000] {dag.py:3696} INFO - Setting next_dagrun for btc_market_analysis to None, run_after=None
+[2023-10-11T07:37:27.030+0000] {processor.py:179} INFO - Processing /opt/airflow/dags/crypto_dag.py took 3.002 seconds
+[2023-10-11T07:37:57.372+0000] {processor.py:157} INFO - Started process (PID=94) to work on /opt/airflow/dags/crypto_dag.py
+[2023-10-11T07:37:57.373+0000] {processor.py:829} INFO - Processing file /opt/airflow/dags/crypto_dag.py for tasks to queue
+[2023-10-11T07:37:57.375+0000] {logging_mixin.py:151} INFO - [2023-10-11T07:37:57.374+0000] {dagbag.py:539} INFO - Filling up the DagBag from /opt/airflow/dags/crypto_dag.py
+[2023-10-11T07:37:58.019+0000] {processor.py:839} INFO - DAG(s) dict_keys(['btc_market_analysis']) retrieved from /opt/airflow/dags/crypto_dag.py
+[2023-10-11T07:37:58.035+0000] {logging_mixin.py:151} INFO - [2023-10-11T07:37:58.035+0000] {dag.py:2915} INFO - Sync 1 DAGs
+[2023-10-11T07:37:58.041+0000] {logging_mixin.py:151} INFO - [2023-10-11T07:37:58.041+0000] {dag.py:3696} INFO - Setting next_dagrun for btc_market_analysis to None, run_after=None
+[2023-10-11T07:37:58.050+0000] {processor.py:179} INFO - Processing /opt/airflow/dags/crypto_dag.py took 0.681 seconds
+[2023-10-11T07:38:28.861+0000] {processor.py:157} INFO - Started process (PID=158) to work on /opt/airflow/dags/crypto_dag.py
+[2023-10-11T07:38:28.863+0000] {processor.py:829} INFO - Processing file /opt/airflow/dags/crypto_dag.py for tasks to queue
+[2023-10-11T07:38:28.866+0000] {logging_mixin.py:151} INFO - [2023-10-11T07:38:28.865+0000] {dagbag.py:539} INFO - Filling up the DagBag from /opt/airflow/dags/crypto_dag.py
+[2023-10-11T07:38:29.393+0000] {processor.py:839} INFO - DAG(s) dict_keys(['btc_market_analysis']) retrieved from /opt/airflow/dags/crypto_dag.py
+[2023-10-11T07:38:29.407+0000] {logging_mixin.py:151} INFO - [2023-10-11T07:38:29.407+0000] {dag.py:2915} INFO - Sync 1 DAGs
+[2023-10-11T07:38:29.413+0000] {logging_mixin.py:151} INFO - [2023-10-11T07:38:29.413+0000] {dag.py:3696} INFO - Setting next_dagrun for btc_market_analysis to None, run_after=None
+[2023-10-11T07:38:29.423+0000] {processor.py:179} INFO - Processing /opt/airflow/dags/crypto_dag.py took 0.564 seconds
+[2023-10-11T07:39:00.376+0000] {processor.py:157} INFO - Started process (PID=217) to work on /opt/airflow/dags/crypto_dag.py
+[2023-10-11T07:39:00.377+0000] {processor.py:829} INFO - Processing file /opt/airflow/dags/crypto_dag.py for tasks to queue
+[2023-10-11T07:39:00.381+0000] {logging_mixin.py:151} INFO - [2023-10-11T07:39:00.380+0000] {dagbag.py:539} INFO - Filling up the DagBag from /opt/airflow/dags/crypto_dag.py
+[2023-10-11T07:39:00.926+0000] {processor.py:839} INFO - DAG(s) dict_keys(['btc_market_analysis']) retrieved from /opt/airflow/dags/crypto_dag.py
+[2023-10-11T07:39:00.941+0000] {logging_mixin.py:151} INFO - [2023-10-11T07:39:00.940+0000] {dag.py:2915} INFO - Sync 1 DAGs
+[2023-10-11T07:39:00.947+0000] {logging_mixin.py:151} INFO - [2023-10-11T07:39:00.947+0000] {dag.py:3696} INFO - Setting next_dagrun for btc_market_analysis to None, run_after=None
+[2023-10-11T07:39:00.956+0000] {processor.py:179} INFO - Processing /opt/airflow/dags/crypto_dag.py took 0.586 seconds
+[2023-10-11T07:39:31.023+0000] {processor.py:157} INFO - Started process (PID=278) to work on /opt/airflow/dags/crypto_dag.py
+[2023-10-11T07:39:31.024+0000] {processor.py:829} INFO - Processing file /opt/airflow/dags/crypto_dag.py for tasks to queue
+[2023-10-11T07:39:31.026+0000] {logging_mixin.py:151} INFO - [2023-10-11T07:39:31.025+0000] {dagbag.py:539} INFO - Filling up the DagBag from /opt/airflow/dags/crypto_dag.py
+[2023-10-11T07:39:31.534+0000] {processor.py:839} INFO - DAG(s) dict_keys(['btc_market_analysis']) retrieved from /opt/airflow/dags/crypto_dag.py
+[2023-10-11T07:39:31.548+0000] {logging_mixin.py:151} INFO - [2023-10-11T07:39:31.548+0000] {dag.py:2915} INFO - Sync 1 DAGs
+[2023-10-11T07:39:31.555+0000] {logging_mixin.py:151} INFO - [2023-10-11T07:39:31.555+0000] {dag.py:3696} INFO - Setting next_dagrun for btc_market_analysis to None, run_after=None
+[2023-10-11T07:39:31.564+0000] {processor.py:179} INFO - Processing /opt/airflow/dags/crypto_dag.py took 0.543 seconds
+[2023-10-11T07:40:01.618+0000] {processor.py:157} INFO - Started process (PID=343) to work on /opt/airflow/dags/crypto_dag.py
+[2023-10-11T07:40:01.619+0000] {processor.py:829} INFO - Processing file /opt/airflow/dags/crypto_dag.py for tasks to queue
+[2023-10-11T07:40:01.620+0000] {logging_mixin.py:151} INFO - [2023-10-11T07:40:01.620+0000] {dagbag.py:539} INFO - Filling up the DagBag from /opt/airflow/dags/crypto_dag.py
+[2023-10-11T07:40:02.118+0000] {processor.py:839} INFO - DAG(s) dict_keys(['btc_market_analysis']) retrieved from /opt/airflow/dags/crypto_dag.py
+[2023-10-11T07:40:02.135+0000] {logging_mixin.py:151} INFO - [2023-10-11T07:40:02.135+0000] {dag.py:2915} INFO - Sync 1 DAGs
+[2023-10-11T07:40:02.143+0000] {logging_mixin.py:151} INFO - [2023-10-11T07:40:02.143+0000] {dag.py:3696} INFO - Setting next_dagrun for btc_market_analysis to None, run_after=None
+[2023-10-11T07:40:02.155+0000] {processor.py:179} INFO - Processing /opt/airflow/dags/crypto_dag.py took 0.539 seconds
+[2023-10-11T07:40:32.934+0000] {processor.py:157} INFO - Started process (PID=406) to work on /opt/airflow/dags/crypto_dag.py
+[2023-10-11T07:40:32.936+0000] {processor.py:829} INFO - Processing file /opt/airflow/dags/crypto_dag.py for tasks to queue
+[2023-10-11T07:40:32.938+0000] {logging_mixin.py:151} INFO - [2023-10-11T07:40:32.938+0000] {dagbag.py:539} INFO - Filling up the DagBag from /opt/airflow/dags/crypto_dag.py
+[2023-10-11T07:40:33.445+0000] {processor.py:839} INFO - DAG(s) dict_keys(['btc_market_analysis']) retrieved from /opt/airflow/dags/crypto_dag.py
+[2023-10-11T07:40:33.459+0000] {logging_mixin.py:151} INFO - [2023-10-11T07:40:33.459+0000] {dag.py:2915} INFO - Sync 1 DAGs
+[2023-10-11T07:40:33.466+0000] {logging_mixin.py:151} INFO - [2023-10-11T07:40:33.466+0000] {dag.py:3696} INFO - Setting next_dagrun for btc_market_analysis to None, run_after=None
+[2023-10-11T07:40:33.475+0000] {processor.py:179} INFO - Processing /opt/airflow/dags/crypto_dag.py took 0.546 seconds
+[2023-10-11T07:41:04.341+0000] {processor.py:157} INFO - Started process (PID=470) to work on /opt/airflow/dags/crypto_dag.py
+[2023-10-11T07:41:04.343+0000] {processor.py:829} INFO - Processing file /opt/airflow/dags/crypto_dag.py for tasks to queue
+[2023-10-11T07:41:04.346+0000] {logging_mixin.py:151} INFO - [2023-10-11T07:41:04.345+0000] {dagbag.py:539} INFO - Filling up the DagBag from /opt/airflow/dags/crypto_dag.py
+[2023-10-11T07:41:04.860+0000] {processor.py:839} INFO - DAG(s) dict_keys(['btc_market_analysis']) retrieved from /opt/airflow/dags/crypto_dag.py
+[2023-10-11T07:41:04.875+0000] {logging_mixin.py:151} INFO - [2023-10-11T07:41:04.875+0000] {dag.py:2915} INFO - Sync 1 DAGs
+[2023-10-11T07:41:04.882+0000] {logging_mixin.py:151} INFO - [2023-10-11T07:41:04.882+0000] {dag.py:3696} INFO - Setting next_dagrun for btc_market_analysis to None, run_after=None
+[2023-10-11T07:41:04.892+0000] {processor.py:179} INFO - Processing /opt/airflow/dags/crypto_dag.py took 0.556 seconds
+[2023-10-11T07:41:34.961+0000] {processor.py:157} INFO - Started process (PID=536) to work on /opt/airflow/dags/crypto_dag.py
+[2023-10-11T07:41:34.961+0000] {processor.py:829} INFO - Processing file /opt/airflow/dags/crypto_dag.py for tasks to queue
+[2023-10-11T07:41:34.963+0000] {logging_mixin.py:151} INFO - [2023-10-11T07:41:34.963+0000] {dagbag.py:539} INFO - Filling up the DagBag from /opt/airflow/dags/crypto_dag.py
+[2023-10-11T07:41:35.459+0000] {processor.py:839} INFO - DAG(s) dict_keys(['btc_market_analysis']) retrieved from /opt/airflow/dags/crypto_dag.py
+[2023-10-11T07:41:35.473+0000] {logging_mixin.py:151} INFO - [2023-10-11T07:41:35.473+0000] {dag.py:2915} INFO - Sync 1 DAGs
+[2023-10-11T07:41:35.480+0000] {logging_mixin.py:151} INFO - [2023-10-11T07:41:35.480+0000] {dag.py:3696} INFO - Setting next_dagrun for btc_market_analysis to None, run_after=None
+[2023-10-11T07:41:35.490+0000] {processor.py:179} INFO - Processing /opt/airflow/dags/crypto_dag.py took 0.531 seconds
+[2023-10-11T07:42:05.533+0000] {processor.py:157} INFO - Started process (PID=604) to work on /opt/airflow/dags/crypto_dag.py
+[2023-10-11T07:42:05.534+0000] {processor.py:829} INFO - Processing file /opt/airflow/dags/crypto_dag.py for tasks to queue
+[2023-10-11T07:42:05.535+0000] {logging_mixin.py:151} INFO - [2023-10-11T07:42:05.535+0000] {dagbag.py:539} INFO - Filling up the DagBag from /opt/airflow/dags/crypto_dag.py
+[2023-10-11T07:42:05.981+0000] {processor.py:839} INFO - DAG(s) dict_keys(['btc_market_analysis']) retrieved from /opt/airflow/dags/crypto_dag.py
+[2023-10-11T07:42:05.995+0000] {logging_mixin.py:151} INFO - [2023-10-11T07:42:05.995+0000] {dag.py:2915} INFO - Sync 1 DAGs
+[2023-10-11T07:42:06.001+0000] {logging_mixin.py:151} INFO - [2023-10-11T07:42:06.001+0000] {dag.py:3696} INFO - Setting next_dagrun for btc_market_analysis to None, run_after=None
+[2023-10-11T07:42:06.010+0000] {processor.py:179} INFO - Processing /opt/airflow/dags/crypto_dag.py took 0.480 seconds
+[2023-10-11T07:42:36.238+0000] {processor.py:157} INFO - Started process (PID=663) to work on /opt/airflow/dags/crypto_dag.py
+[2023-10-11T07:42:36.239+0000] {processor.py:829} INFO - Processing file /opt/airflow/dags/crypto_dag.py for tasks to queue
+[2023-10-11T07:42:36.240+0000] {logging_mixin.py:151} INFO - [2023-10-11T07:42:36.240+0000] {dagbag.py:539} INFO - Filling up the DagBag from /opt/airflow/dags/crypto_dag.py
+[2023-10-11T07:42:36.803+0000] {processor.py:839} INFO - DAG(s) dict_keys(['btc_market_analysis']) retrieved from /opt/airflow/dags/crypto_dag.py
+[2023-10-11T07:42:36.817+0000] {logging_mixin.py:151} INFO - [2023-10-11T07:42:36.817+0000] {dag.py:2915} INFO - Sync 1 DAGs
+[2023-10-11T07:42:36.823+0000] {logging_mixin.py:151} INFO - [2023-10-11T07:42:36.823+0000] {dag.py:3696} INFO - Setting next_dagrun for btc_market_analysis to None, run_after=None
+[2023-10-11T07:42:36.832+0000] {processor.py:179} INFO - Processing /opt/airflow/dags/crypto_dag.py took 0.597 seconds
+[2023-10-11T07:43:07.813+0000] {processor.py:157} INFO - Started process (PID=727) to work on /opt/airflow/dags/crypto_dag.py
+[2023-10-11T07:43:07.814+0000] {processor.py:829} INFO - Processing file /opt/airflow/dags/crypto_dag.py for tasks to queue
+[2023-10-11T07:43:07.817+0000] {logging_mixin.py:151} INFO - [2023-10-11T07:43:07.817+0000] {dagbag.py:539} INFO - Filling up the DagBag from /opt/airflow/dags/crypto_dag.py
+[2023-10-11T07:43:08.284+0000] {processor.py:839} INFO - DAG(s) dict_keys(['btc_market_analysis']) retrieved from /opt/airflow/dags/crypto_dag.py
+[2023-10-11T07:43:08.297+0000] {logging_mixin.py:151} INFO - [2023-10-11T07:43:08.297+0000] {dag.py:2915} INFO - Sync 1 DAGs
+[2023-10-11T07:43:08.303+0000] {logging_mixin.py:151} INFO - [2023-10-11T07:43:08.303+0000] {dag.py:3696} INFO - Setting next_dagrun for btc_market_analysis to None, run_after=None
+[2023-10-11T07:43:08.312+0000] {processor.py:179} INFO - Processing /opt/airflow/dags/crypto_dag.py took 0.504 seconds
+[2023-10-11T07:43:38.869+0000] {processor.py:157} INFO - Started process (PID=786) to work on /opt/airflow/dags/crypto_dag.py
+[2023-10-11T07:43:38.870+0000] {processor.py:829} INFO - Processing file /opt/airflow/dags/crypto_dag.py for tasks to queue
+[2023-10-11T07:43:38.873+0000] {logging_mixin.py:151} INFO - [2023-10-11T07:43:38.873+0000] {dagbag.py:539} INFO - Filling up the DagBag from /opt/airflow/dags/crypto_dag.py
+[2023-10-11T07:43:39.339+0000] {processor.py:839} INFO - DAG(s) dict_keys(['btc_market_analysis']) retrieved from /opt/airflow/dags/crypto_dag.py
+[2023-10-11T07:43:39.352+0000] {logging_mixin.py:151} INFO - [2023-10-11T07:43:39.352+0000] {dag.py:2915} INFO - Sync 1 DAGs
+[2023-10-11T07:43:39.359+0000] {logging_mixin.py:151} INFO - [2023-10-11T07:43:39.359+0000] {dag.py:3696} INFO - Setting next_dagrun for btc_market_analysis to None, run_after=None
+[2023-10-11T07:43:39.367+0000] {processor.py:179} INFO - Processing /opt/airflow/dags/crypto_dag.py took 0.505 seconds
+[2023-10-11T07:44:10.009+0000] {processor.py:157} INFO - Started process (PID=845) to work on /opt/airflow/dags/crypto_dag.py
+[2023-10-11T07:44:10.011+0000] {processor.py:829} INFO - Processing file /opt/airflow/dags/crypto_dag.py for tasks to queue
+[2023-10-11T07:44:10.014+0000] {logging_mixin.py:151} INFO - [2023-10-11T07:44:10.013+0000] {dagbag.py:539} INFO - Filling up the DagBag from /opt/airflow/dags/crypto_dag.py
+[2023-10-11T07:44:10.486+0000] {processor.py:839} INFO - DAG(s) dict_keys(['btc_market_analysis']) retrieved from /opt/airflow/dags/crypto_dag.py
+[2023-10-11T07:44:10.500+0000] {logging_mixin.py:151} INFO - [2023-10-11T07:44:10.500+0000] {dag.py:2915} INFO - Sync 1 DAGs
+[2023-10-11T07:44:10.507+0000] {logging_mixin.py:151} INFO - [2023-10-11T07:44:10.507+0000] {dag.py:3696} INFO - Setting next_dagrun for btc_market_analysis to None, run_after=None
+[2023-10-11T07:44:10.516+0000] {processor.py:179} INFO - Processing /opt/airflow/dags/crypto_dag.py took 0.511 seconds
+[2023-10-11T07:44:41.160+0000] {processor.py:157} INFO - Started process (PID=904) to work on /opt/airflow/dags/crypto_dag.py
+[2023-10-11T07:44:41.161+0000] {processor.py:829} INFO - Processing file /opt/airflow/dags/crypto_dag.py for tasks to queue
+[2023-10-11T07:44:41.162+0000] {logging_mixin.py:151} INFO - [2023-10-11T07:44:41.162+0000] {dagbag.py:539} INFO - Filling up the DagBag from /opt/airflow/dags/crypto_dag.py
+[2023-10-11T07:44:41.611+0000] {processor.py:839} INFO - DAG(s) dict_keys(['btc_market_analysis']) retrieved from /opt/airflow/dags/crypto_dag.py
+[2023-10-11T07:44:41.624+0000] {logging_mixin.py:151} INFO - [2023-10-11T07:44:41.624+0000] {dag.py:2915} INFO - Sync 1 DAGs
+[2023-10-11T07:44:41.630+0000] {logging_mixin.py:151} INFO - [2023-10-11T07:44:41.630+0000] {dag.py:3696} INFO - Setting next_dagrun for btc_market_analysis to None, run_after=None
+[2023-10-11T07:44:41.639+0000] {processor.py:179} INFO - Processing /opt/airflow/dags/crypto_dag.py took 0.484 seconds
+[2023-10-11T07:45:12.200+0000] {processor.py:157} INFO - Started process (PID=963) to work on /opt/airflow/dags/crypto_dag.py
+[2023-10-11T07:45:12.201+0000] {processor.py:829} INFO - Processing file /opt/airflow/dags/crypto_dag.py for tasks to queue
+[2023-10-11T07:45:12.203+0000] {logging_mixin.py:151} INFO - [2023-10-11T07:45:12.203+0000] {dagbag.py:539} INFO - Filling up the DagBag from /opt/airflow/dags/crypto_dag.py
+[2023-10-11T07:45:12.656+0000] {processor.py:839} INFO - DAG(s) dict_keys(['btc_market_analysis']) retrieved from /opt/airflow/dags/crypto_dag.py
+[2023-10-11T07:45:12.671+0000] {logging_mixin.py:151} INFO - [2023-10-11T07:45:12.671+0000] {dag.py:2915} INFO - Sync 1 DAGs
+[2023-10-11T07:45:12.677+0000] {logging_mixin.py:151} INFO - [2023-10-11T07:45:12.677+0000] {dag.py:3696} INFO - Setting next_dagrun for btc_market_analysis to None, run_after=None
+[2023-10-11T07:45:12.686+0000] {processor.py:179} INFO - Processing /opt/airflow/dags/crypto_dag.py took 0.490 seconds
+[2023-10-11T07:45:42.760+0000] {processor.py:157} INFO - Started process (PID=1022) to work on /opt/airflow/dags/crypto_dag.py
+[2023-10-11T07:45:42.761+0000] {processor.py:829} INFO - Processing file /opt/airflow/dags/crypto_dag.py for tasks to queue
+[2023-10-11T07:45:42.763+0000] {logging_mixin.py:151} INFO - [2023-10-11T07:45:42.763+0000] {dagbag.py:539} INFO - Filling up the DagBag from /opt/airflow/dags/crypto_dag.py
+[2023-10-11T07:45:43.266+0000] {processor.py:839} INFO - DAG(s) dict_keys(['btc_market_analysis']) retrieved from /opt/airflow/dags/crypto_dag.py
+[2023-10-11T07:45:43.279+0000] {logging_mixin.py:151} INFO - [2023-10-11T07:45:43.279+0000] {dag.py:2915} INFO - Sync 1 DAGs
+[2023-10-11T07:45:43.286+0000] {logging_mixin.py:151} INFO - [2023-10-11T07:45:43.286+0000] {dag.py:3696} INFO - Setting next_dagrun for btc_market_analysis to None, run_after=None
+[2023-10-11T07:45:43.295+0000] {processor.py:179} INFO - Processing /opt/airflow/dags/crypto_dag.py took 0.538 seconds
+[2023-10-11T07:46:13.365+0000] {processor.py:157} INFO - Started process (PID=1081) to work on /opt/airflow/dags/crypto_dag.py
+[2023-10-11T07:46:13.366+0000] {processor.py:829} INFO - Processing file /opt/airflow/dags/crypto_dag.py for tasks to queue
+[2023-10-11T07:46:13.368+0000] {logging_mixin.py:151} INFO - [2023-10-11T07:46:13.368+0000] {dagbag.py:539} INFO - Filling up the DagBag from /opt/airflow/dags/crypto_dag.py
+[2023-10-11T07:46:13.966+0000] {processor.py:839} INFO - DAG(s) dict_keys(['btc_market_analysis']) retrieved from /opt/airflow/dags/crypto_dag.py
+[2023-10-11T07:46:13.982+0000] {logging_mixin.py:151} INFO - [2023-10-11T07:46:13.982+0000] {dag.py:2915} INFO - Sync 1 DAGs
+[2023-10-11T07:46:13.990+0000] {logging_mixin.py:151} INFO - [2023-10-11T07:46:13.990+0000] {dag.py:3696} INFO - Setting next_dagrun for btc_market_analysis to None, run_after=None
+[2023-10-11T07:46:14.000+0000] {processor.py:179} INFO - Processing /opt/airflow/dags/crypto_dag.py took 0.639 seconds
+[2023-10-11T07:46:44.616+0000] {processor.py:157} INFO - Started process (PID=1139) to work on /opt/airflow/dags/crypto_dag.py
+[2023-10-11T07:46:44.617+0000] {processor.py:829} INFO - Processing file /opt/airflow/dags/crypto_dag.py for tasks to queue
+[2023-10-11T07:46:44.619+0000] {logging_mixin.py:151} INFO - [2023-10-11T07:46:44.619+0000] {dagbag.py:539} INFO - Filling up the DagBag from /opt/airflow/dags/crypto_dag.py
+[2023-10-11T07:46:45.106+0000] {processor.py:839} INFO - DAG(s) dict_keys(['btc_market_analysis']) retrieved from /opt/airflow/dags/crypto_dag.py
+[2023-10-11T07:46:45.121+0000] {logging_mixin.py:151} INFO - [2023-10-11T07:46:45.120+0000] {dag.py:2915} INFO - Sync 1 DAGs
+[2023-10-11T07:46:45.128+0000] {logging_mixin.py:151} INFO - [2023-10-11T07:46:45.128+0000] {dag.py:3696} INFO - Setting next_dagrun for btc_market_analysis to None, run_after=None
+[2023-10-11T07:46:45.139+0000] {processor.py:179} INFO - Processing /opt/airflow/dags/crypto_dag.py took 0.526 seconds
+[2023-10-11T07:47:15.744+0000] {processor.py:157} INFO - Started process (PID=1198) to work on /opt/airflow/dags/crypto_dag.py
+[2023-10-11T07:47:15.746+0000] {processor.py:829} INFO - Processing file /opt/airflow/dags/crypto_dag.py for tasks to queue
+[2023-10-11T07:47:15.749+0000] {logging_mixin.py:151} INFO - [2023-10-11T07:47:15.749+0000] {dagbag.py:539} INFO - Filling up the DagBag from /opt/airflow/dags/crypto_dag.py
+[2023-10-11T07:47:16.222+0000] {processor.py:839} INFO - DAG(s) dict_keys(['btc_market_analysis']) retrieved from /opt/airflow/dags/crypto_dag.py
+[2023-10-11T07:47:16.238+0000] {logging_mixin.py:151} INFO - [2023-10-11T07:47:16.238+0000] {dag.py:2915} INFO - Sync 1 DAGs
+[2023-10-11T07:47:16.245+0000] {logging_mixin.py:151} INFO - [2023-10-11T07:47:16.245+0000] {dag.py:3696} INFO - Setting next_dagrun for btc_market_analysis to None, run_after=None
+[2023-10-11T07:47:16.254+0000] {processor.py:179} INFO - Processing /opt/airflow/dags/crypto_dag.py took 0.517 seconds
+[2023-10-11T07:47:47.089+0000] {processor.py:157} INFO - Started process (PID=1264) to work on /opt/airflow/dags/crypto_dag.py
+[2023-10-11T07:47:47.090+0000] {processor.py:829} INFO - Processing file /opt/airflow/dags/crypto_dag.py for tasks to queue
+[2023-10-11T07:47:47.093+0000] {logging_mixin.py:151} INFO - [2023-10-11T07:47:47.093+0000] {dagbag.py:539} INFO - Filling up the DagBag from /opt/airflow/dags/crypto_dag.py
+[2023-10-11T07:47:47.575+0000] {processor.py:839} INFO - DAG(s) dict_keys(['btc_market_analysis']) retrieved from /opt/airflow/dags/crypto_dag.py
+[2023-10-11T07:47:47.590+0000] {logging_mixin.py:151} INFO - [2023-10-11T07:47:47.589+0000] {dag.py:2915} INFO - Sync 1 DAGs
+[2023-10-11T07:47:47.596+0000] {logging_mixin.py:151} INFO - [2023-10-11T07:47:47.596+0000] {dag.py:3696} INFO - Setting next_dagrun for btc_market_analysis to None, run_after=None
+[2023-10-11T07:47:47.606+0000] {processor.py:179} INFO - Processing /opt/airflow/dags/crypto_dag.py took 0.522 seconds
+[2023-10-11T07:48:18.203+0000] {processor.py:157} INFO - Started process (PID=1323) to work on /opt/airflow/dags/crypto_dag.py
+[2023-10-11T07:48:18.204+0000] {processor.py:829} INFO - Processing file /opt/airflow/dags/crypto_dag.py for tasks to queue
+[2023-10-11T07:48:18.206+0000] {logging_mixin.py:151} INFO - [2023-10-11T07:48:18.206+0000] {dagbag.py:539} INFO - Filling up the DagBag from /opt/airflow/dags/crypto_dag.py
+[2023-10-11T07:48:18.727+0000] {processor.py:839} INFO - DAG(s) dict_keys(['btc_market_analysis']) retrieved from /opt/airflow/dags/crypto_dag.py
+[2023-10-11T07:48:18.742+0000] {logging_mixin.py:151} INFO - [2023-10-11T07:48:18.742+0000] {dag.py:2915} INFO - Sync 1 DAGs
+[2023-10-11T07:48:18.749+0000] {logging_mixin.py:151} INFO - [2023-10-11T07:48:18.749+0000] {dag.py:3696} INFO - Setting next_dagrun for btc_market_analysis to None, run_after=None
+[2023-10-11T07:48:18.760+0000] {processor.py:179} INFO - Processing /opt/airflow/dags/crypto_dag.py took 0.560 seconds
+[2023-10-11T07:48:49.025+0000] {processor.py:157} INFO - Started process (PID=1382) to work on /opt/airflow/dags/crypto_dag.py
+[2023-10-11T07:48:49.026+0000] {processor.py:829} INFO - Processing file /opt/airflow/dags/crypto_dag.py for tasks to queue
+[2023-10-11T07:48:49.029+0000] {logging_mixin.py:151} INFO - [2023-10-11T07:48:49.028+0000] {dagbag.py:539} INFO - Filling up the DagBag from /opt/airflow/dags/crypto_dag.py
+[2023-10-11T07:48:50.043+0000] {processor.py:839} INFO - DAG(s) dict_keys(['btc_market_analysis']) retrieved from /opt/airflow/dags/crypto_dag.py
+[2023-10-11T07:48:50.061+0000] {logging_mixin.py:151} INFO - [2023-10-11T07:48:50.061+0000] {dag.py:2915} INFO - Sync 1 DAGs
+[2023-10-11T07:48:50.070+0000] {logging_mixin.py:151} INFO - [2023-10-11T07:48:50.070+0000] {dag.py:3696} INFO - Setting next_dagrun for btc_market_analysis to None, run_after=None
+[2023-10-11T07:48:50.092+0000] {processor.py:179} INFO - Processing /opt/airflow/dags/crypto_dag.py took 1.070 seconds
+[2023-10-11T07:49:20.134+0000] {processor.py:157} INFO - Started process (PID=1446) to work on /opt/airflow/dags/crypto_dag.py
+[2023-10-11T07:49:20.134+0000] {processor.py:829} INFO - Processing file /opt/airflow/dags/crypto_dag.py for tasks to queue
+[2023-10-11T07:49:20.136+0000] {logging_mixin.py:151} INFO - [2023-10-11T07:49:20.135+0000] {dagbag.py:539} INFO - Filling up the DagBag from /opt/airflow/dags/crypto_dag.py
+[2023-10-11T07:49:20.623+0000] {processor.py:839} INFO - DAG(s) dict_keys(['btc_market_analysis']) retrieved from /opt/airflow/dags/crypto_dag.py
+[2023-10-11T07:49:20.638+0000] {logging_mixin.py:151} INFO - [2023-10-11T07:49:20.638+0000] {dag.py:2915} INFO - Sync 1 DAGs
+[2023-10-11T07:49:20.644+0000] {logging_mixin.py:151} INFO - [2023-10-11T07:49:20.644+0000] {dag.py:3696} INFO - Setting next_dagrun for btc_market_analysis to None, run_after=None
+[2023-10-11T07:49:20.654+0000] {processor.py:179} INFO - Processing /opt/airflow/dags/crypto_dag.py took 0.522 seconds
+[2023-10-11T07:49:51.070+0000] {processor.py:157} INFO - Started process (PID=1505) to work on /opt/airflow/dags/crypto_dag.py
+[2023-10-11T07:49:51.071+0000] {processor.py:829} INFO - Processing file /opt/airflow/dags/crypto_dag.py for tasks to queue
+[2023-10-11T07:49:51.074+0000] {logging_mixin.py:151} INFO - [2023-10-11T07:49:51.074+0000] {dagbag.py:539} INFO - Filling up the DagBag from /opt/airflow/dags/crypto_dag.py
+[2023-10-11T07:49:51.576+0000] {processor.py:839} INFO - DAG(s) dict_keys(['btc_market_analysis']) retrieved from /opt/airflow/dags/crypto_dag.py
+[2023-10-11T07:49:51.590+0000] {logging_mixin.py:151} INFO - [2023-10-11T07:49:51.590+0000] {dag.py:2915} INFO - Sync 1 DAGs
+[2023-10-11T07:49:51.596+0000] {logging_mixin.py:151} INFO - [2023-10-11T07:49:51.596+0000] {dag.py:3696} INFO - Setting next_dagrun for btc_market_analysis to None, run_after=None
+[2023-10-11T07:49:51.606+0000] {processor.py:179} INFO - Processing /opt/airflow/dags/crypto_dag.py took 0.540 seconds

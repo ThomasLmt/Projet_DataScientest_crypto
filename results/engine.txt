@@ -1,4 +1,4 @@
-START - 2023-10-11 09:18:20
+START - 2023-10-11 09:37:26
 
 Market:  BTCUSDT
 cycle:  1
@@ -225,7 +225,7 @@ cycle:  20
 cycle:  30
 cycle:  40
 
-Realized in 10.344 minutes
+Realized in 10.758 minutes
 
-END - 2023-10-11 09:28:40
+END - 2023-10-11 09:48:12
 
